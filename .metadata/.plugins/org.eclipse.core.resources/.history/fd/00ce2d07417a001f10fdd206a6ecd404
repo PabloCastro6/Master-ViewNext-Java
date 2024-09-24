@@ -1,0 +1,30 @@
+package com.pablo.futbol;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Equipo {
+	 String nombre;
+	 int partidosGanados;
+	 
+	
+	
+	 public Equipo(String nombre) {
+		  this.nombre = nombre;
+		 this.partidosGanados = 0;
+	 }
+
+	
+	public void ganarPartido() {
+		partidosGanados++;
+	}
+	
+	public int getPartidosGanados() {
+		return partidosGanados;
+	}
+	@Override
+	public String toString() {
+		return nombre + " Partidos ganados: " + partidosGanados;
+	}
+}

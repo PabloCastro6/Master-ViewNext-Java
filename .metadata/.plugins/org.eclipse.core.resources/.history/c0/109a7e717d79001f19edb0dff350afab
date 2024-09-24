@@ -1,0 +1,10 @@
+package com.cursojava.cafeteria;
+
+public class Main {
+	public static void main(String[] args) {
+ Cafetera cafetera = new Cafetera();
+ 
+ cafetera.llenarCafetera();
+ System.out.println("Cantidad actual: " + cafetera.getCantidadActual() + " c.c.");
+}
+}

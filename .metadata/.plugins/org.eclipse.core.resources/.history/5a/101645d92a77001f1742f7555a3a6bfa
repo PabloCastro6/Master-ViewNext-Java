@@ -1,0 +1,60 @@
+package com.curosjava.ejemplo02;
+
+public class Libro {
+	private int isbn;
+	private String titulo;
+	private String autor;
+	private int  numeroPaginas;
+	
+	
+	//Constructor permite inicializar el objeto 
+/*	public Libro() {
+	}
+*/
+
+	public Libro(int isbn) {
+		super();
+		this.isbn = isbn;
+	}
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+
+	public void setNumeroPaginas(int numeroPaginas) {
+		this.numeroPaginas = numeroPaginas;
+	}
+
+
+	public int getIsbn() {
+		return isbn;
+	}
+
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+	public String getAutor() {
+		return autor;
+	}
+
+
+	public int getNumeroPaginas() {
+		return numeroPaginas;
+	}
+
+	
+	
+	
+	
+
+}

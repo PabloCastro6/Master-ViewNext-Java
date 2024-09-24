@@ -1,0 +1,39 @@
+package com.pablo.futbol;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Liga {
+    ArrayList<Equipo> equipos = new ArrayList<>();
+    ArrayList<Partido> partidos = new ArrayList<>();
+
+    public void agregarEquipo(Equipo equipo) {
+        equipos.add(equipo);
+    }
+
+    public void agregarPartido(Partido partido) {
+        partidos.add(partido);
+        partido.jugarPartido();
+    }
+
+    // Método para listar equipos por partidos ganados
+    public void listarEquiposPorPartidosGanados() {
+        Collections.sort(equipos, new Comparator<Equipo>() {
+            @Override
+            public int compare(Equipo e1, Equipo e2) {
+                return Integer.compare(e2.getPartidosGanados(), e1.getPartidosGanados());
+            }
+        });
+        for (Equipo equipo : equipos) {
+            System.out.println(equipo);
+        }
+    }
+
+    // Método para listar los partidos jugados
+    public void listarPartidos() {
+        for (Partido partido : partidos) {
+            System.out.println(partido);
+        }
+    }
+}

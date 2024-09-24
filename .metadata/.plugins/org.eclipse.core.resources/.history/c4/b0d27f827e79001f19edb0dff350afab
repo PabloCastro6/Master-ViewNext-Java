@@ -1,0 +1,12 @@
+
+public class Main {
+    public static void main(String[] args) {
+        // Crear un ordenador
+        Ordenador ordenador = new Ordenador("001", "HP Pavilion", 800.0, 10, "Intel i5", 8, 512);
+        System.out.println(ordenador);
+
+        // Crear un teléfono móvil
+        TelefonoMovil movil = new TelefonoMovil("002", "Samsung Galaxy S21", 999.99, 5, "Movistar");
+        System.out.println(movil);
+    }
+}

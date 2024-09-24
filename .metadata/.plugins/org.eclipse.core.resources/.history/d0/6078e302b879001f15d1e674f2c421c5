@@ -1,0 +1,22 @@
+package com.pablo.futbol;
+
+public class Jugador {
+	private String nombre;
+	private int goles;
+	
+	
+	//Constructor
+	public Jugador (String nombre, int goles) {
+		this.nombre = nombre;
+		this.goles = goles;
+	}
+	
+	
+	@Override 
+	public String toString() {
+		return nombre + ": " + goles + " goles";
+		
+	}
+	
+}
+

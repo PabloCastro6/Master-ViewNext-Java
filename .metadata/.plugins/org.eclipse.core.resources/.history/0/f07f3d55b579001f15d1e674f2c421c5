@@ -1,0 +1,17 @@
+Pensando en objetos 
+ 
+Caso estudio 
+ 
+Una liga de futbol necesita un sistema para rastrear las clasificaciones de equipos y 
+jugadores. 
+Los administradores quieren un informe de los partidos jugados con los resultados, 
+una lista de los equipos según la clasificación de los partidos ganados, una lista de 
+jugadores de cada equipo según los goles marcados. 
+ 
+Tarea 
+ 
+Realizar el análisis de programación orientada a objetos. 
+El programa deberá: 
+• Permitir listar los jugadores de cada equipo ordenados por goles marcados. 
+• La lista de los partidos jugados con los resultados. 
+• La lista de equipos en la liga ordenados por partidos ganados.

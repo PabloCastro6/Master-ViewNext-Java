@@ -1,0 +1,31 @@
+Etiqueta
+    
+	Descripción
+	        
+	@author
+	      
+	Autor  del elemento a documentar
+	        
+	@version
+	      
+	Versión  del elemento de la clase
+	        
+	@return
+	      
+	Indica  los parámetros de salida
+	        
+	@exception
+	      
+	Indica  la excepción que puede generar
+	        
+	@param
+	      
+	Código  para documentar cada uno de los parámetros
+	        
+	@see
+	      
+	Una  referencia a otra clase o utilidad
+	        
+	@deprecated
+	      
+	El  método ha sido reemplazado por otro

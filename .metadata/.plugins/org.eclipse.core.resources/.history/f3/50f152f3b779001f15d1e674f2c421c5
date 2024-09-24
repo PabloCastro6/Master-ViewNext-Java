@@ -1,0 +1,30 @@
+package com.pablo.futbol;
+
+public class Partido {
+	Equipo equipoLocal;
+	Equipo equipoVisitante;
+	Integer golesLocal;
+	Integer golesVisitante;
+	
+	public Partido (Equipo EquipoLocal, Equipo EquipoVisitante,int golesLocal, int golesVisitante) {
+		this.equipoLocal= equipoLocal;
+		this.equipoVisitante = equipoVisitante;
+		this.golesLocal = golesLocal;
+		this.golesVisitante = golesVisitante;
+	}
+	
+	public void jugarPartido () {
+		 if (golesLocal > golesVisitante) {
+			 equipoLocal.ganarPartido();
+		 } else if (golesVisitante > golesLocal) {
+			 equipoVisitante.ganarPartido();
+		 }
+	}
+	
+	@Override 
+	public String toString() {
+		return equipoLocal.nombre + "" + golesLocal + "-" + 
+	golesVisitante + " " + equipoVisitante.nombre;
+	}
+
+}

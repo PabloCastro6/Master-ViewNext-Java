@@ -1,0 +1,32 @@
+package com.pablo.futbol;
+
+public class Main {
+	
+	public static void main (String[] args) {
+		
+		Liga liga = new Liga();
+		
+		Equipo equipo1 = new Equipo("Equipo A");
+		Equipo equipo2 = new Equipo("Equipo B");
+		Equipo equipo3 = new Equipo ("Equipo C");
+		Equipo equipo4 = new Equipo ("Equipo D");
+		
+		liga.agregarEquipo(equipo1);
+		liga.agregarEquipo(equipo2);
+		
+		
+		Partido partido1 = new Partido (equipo1, equipo2, 2, 1);
+		Partido partido2 = new Partido (equipo3, equipo4, 5, 3);
+		
+		partido1.jugarPartido();
+		partido2.jugarPartido();
+		
+		
+	    liga.agregarPartido(partido1);
+		
+		
+		liga.listarEquiposPorPartidosGanados();
+	
+	}
+
+}
