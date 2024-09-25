@@ -16,7 +16,8 @@ public class Partido {
     public void jugarPartido() {
         if (golesLocal > golesVisitante) {
             equipoLocal.ganarPartido();
-        } else if (golesVisitante > golesLocal) {
+        } 
+        if (golesVisitante > golesLocal) {
             equipoVisitante.ganarPartido();
         }
     }

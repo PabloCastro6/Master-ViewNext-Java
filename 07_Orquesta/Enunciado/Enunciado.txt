@@ -1,0 +1,32 @@
+Ejercicio de una orquesta 
+ 
+1. Clase Instrumento 
+Variables: nombre y tipo 
+Métodos:  
+• tocar(): “Tocando el instrumento” + nombreInstrumento x
+• afinar(): “Afinando el instrumento” + nombreInstrumento x
+
+2. Clase Flauta (hereda de instrumento)x 
+Variables: modelo 
+Métodos: 
+• En el método tocar() amplía el método del padre, agregará :  
+“Soplando”. x
+
+
+3. Clase Guitarra (hereda de instrumento) 
+Variables: número de cuerdas x
+
+4. Clase Guitarra eléctrica (hereda de guitarra) 
+Variable: potencia x
+Métodos:  
+• Sobrescribir totalmente el método tocar:  “tocando la guitarra 
+eléctrica”. x
+ 
+5. Clase Tambor (hereda de instrumento) 
+Variables: tamaño x
+Métodos:  
+ aporrear(): “Aporreando tambor” + nombreInstrumento x
+ 
+6. Clase Orquesta 
+En esta clase se pondrán a tocar todos los instrumentos excepto el tambor que será 
+aporreado. x

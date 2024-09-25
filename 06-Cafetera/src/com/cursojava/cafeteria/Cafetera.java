@@ -48,7 +48,7 @@ public class Cafetera {
         }
     }
 
-    // Método llenarCafetera(): llena la cafetera a su capacidad máxima
+    
     public void llenarCafetera() {
         this.cantidadActual = capacidadMaxima;
     }
