@@ -1,8 +1,6 @@
 package com.curso.orquesta;
 
 public class Tambor extends Instrumento {
-	
-
 
 	private String tamaño;
 	

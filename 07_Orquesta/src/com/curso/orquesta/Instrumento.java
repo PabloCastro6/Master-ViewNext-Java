@@ -16,7 +16,7 @@ public class Instrumento {
 	}
 	
 	public void afinar() {
-		System.out.println("Afinando el instrumento" + nombre);
+		System.out.println("Afinando el instrumento " + nombre);
 		
 	}
 

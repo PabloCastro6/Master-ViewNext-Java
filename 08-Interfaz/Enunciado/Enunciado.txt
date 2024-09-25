@@ -1,0 +1,22 @@
+Ejercicio de Interfaces   
+ 
+ 
+Disponemos de la interfaz ”Imprimible” con la declaración de los siguientes 
+métodos:   
+ 
+- informeLargo()   
+- informeCorto()   
+ 
+Tenemos 2 clases llamadas “Página” y “Factura” que implementan la interfaz con 
+2 propiedades diferentes cada una: nPagina, nLineas para Página y nFactura, 
+codigoCliente para Factura.   
+ 
+El método “informeCorto” debe presentar el valor de la propiedad nPagina para 
+Pagina y nFactura para Factura.   
+ 
+El método “informeLargo” debe presentar el valor de la propiedades :nPagina + 
+nLlineas para Pagina y nFactura + codigoCliente para Factura.   
+ 
+Crear la clase “GestionDeImpresion” con un método que instancie un   
+objeto de cada clase y llame a sus respectivos métodos “informeLargo” e 
+“informeCorto”.

@@ -13,5 +13,6 @@ public class Flauta extends Instrumento {
 		super.tocar();
 		System.out.println("Soplado");
 	}
-
+	
+	
 }
