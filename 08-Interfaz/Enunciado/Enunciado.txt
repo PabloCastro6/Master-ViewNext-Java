@@ -20,3 +20,4 @@ nLlineas para Pagina y nFactura + codigoCliente para Factura.
 Crear la clase “GestionDeImpresion” con un método que instancie un   
 objeto de cada clase y llame a sus respectivos métodos “informeLargo” e 
 “informeCorto”.
+

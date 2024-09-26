@@ -30,3 +30,14 @@ Métodos:
 6. Clase Orquesta 
 En esta clase se pondrán a tocar todos los instrumentos excepto el tambor que será 
 aporreado. x
+
+
+
+
+Hacer que el tambor se haga de alguna manera "AUTOMATIZADA", no que pongamos nosotros 
+a mano que el tambor aporrea. 
+
+
+
+
+
