@@ -24,7 +24,7 @@ public class Factura implements Imprime {
 
 	@Override
 	public void informeLargo() {
-		System.out.println("Al cliente con codigo " + codigoCliente + "le corresponde la factura " + nFactura) ;
+		System.out.println("Al cliente con codigo " + codigoCliente + " le corresponde la factura " + nFactura) ;
 		
 	}
 

@@ -16,13 +16,13 @@ public class Pagina implements Imprime {
 
 	@Override
 	public void informeLargo() {
-		System.out.println("INFORME LARGO " + nPaginas + "páginas con " +nLineas + "lineas.") ;
+		System.out.println("INFORME LARGO " + nPaginas + " páginas con " +nLineas + "lineas.") ;
 
 	}
 
 	@Override
 	public void informeCorto() {
-		System.out.println("INFORME CORTO " + nPaginas + "páginas");
+		System.out.println("INFORME CORTO " + nPaginas + " páginas");
 
 	}
 

@@ -1,6 +1,8 @@
 package com.curso.principal;
 
 
+import java.util.ArrayList;
+
 import com.curso.interfaces.Imprime;
 import com.curso.modelos.Factura;
 import com.curso.modelos.Pagina;
@@ -47,6 +49,25 @@ public class GestionImpresion {
 		}
 		//Vuestro trabajo consiste en usar un ArrayList para hacer la tercera forma 
 		System.out.println("\t=======>TERCERA FORMA<=====");
+		
+		ArrayList<Imprime> documentos = new ArrayList<>();
+		
+		documentos.add(new Pagina(1,30));
+		documentos.add(new Factura(12345, 24));
+		documentos.add(new Pagina(16,56));
+		documentos.add(new Factura(4567, 56));
+		
+		//Imprimir informes cortos
+		 System.out.println("Informe corto para todos los documentos:");
+	        for (Imprime documento : documentos) {
+	            documento.informeCorto();
+	        }
+
+	        System.out.println("\nInforme largo para todos los documentos:");
+	        // Imprimir todos los informes largos
+	        for (Imprime documento : documentos) {
+	            documento.informeLargo();
+	        }
 		
 	}
 

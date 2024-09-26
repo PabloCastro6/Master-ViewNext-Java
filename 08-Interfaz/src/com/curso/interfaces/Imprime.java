@@ -6,6 +6,7 @@ public interface Imprime {
 	
 	//int metodoSumar(int a, int b);
 	
+	
 
 
 }
