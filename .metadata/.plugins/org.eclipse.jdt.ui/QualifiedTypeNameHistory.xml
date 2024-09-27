@@ -5,5 +5,10 @@
     <fullyQualifiedTypeName name="com.curso.modelos.Factura"/>
     <fullyQualifiedTypeName name="com.curso.modelos.Pagina"/>
     <fullyQualifiedTypeName name="com.curso.interfaces.Imprime"/>
+    <fullyQualifiedTypeName name="com.curos.estatic1.Persona"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.curso.animales.Animal"/>
+    <fullyQualifiedTypeName name="com.curso.animales.Araña"/>
+    <fullyQualifiedTypeName name="com.curso.mascotas.Gato"/>
+    <fullyQualifiedTypeName name="com.curso.mascotas.Pez"/>
 </qualifiedTypeNameHistroy>

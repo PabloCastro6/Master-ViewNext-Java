@@ -1,0 +1,65 @@
+package com.curso.javadoc;
+/* Comentario general
+ * Siempre tiene que ir justo antes del elemento a comentar:
+ * Etiquetas:
+ * @author: especifica el autor de la clase o método
+ * @param: especifica parámetros de métodos
+ * @return: especifica tipo de dato que devuelve un método
+ * @throws: especifica que el método lanza una excepción
+ */
+
+/** 
+ * Clase que repreenta círculos situados en el espacio
+ * Cada círculo queda determinado por su radio y las coordenadas de su centro
+ *
+ * @author Nombre Apellidos    empresa/departamento
+ * @version 1.0 27/09/2024
+ */
+ 
+ 
+ EJEMPLO DE JAVADOC: 
+ En los constructores no se pone javaDock.
+ 
+ public class Circulo {
+        private double x,y;     //coordenas cartesianas del centro del círculo
+        private double r;                //radio del círculo
+        
+        /**
+         * Crea un círculo a partir de su centro y su radio
+         * @param x La coordena x del centro del círculo
+         * @param y La coordena y del centro del círculo
+         * @param r radio del cículo. Debe ser mayor que cero
+         */
+        public Circulo(double x, double y, double r) {
+                super();
+                this.x = x;
+                this.y = y;
+                this.r = r;
+        }
+        /**
+         * Cálculo del área de un círculo
+         * @return
+         */
+        public double area() {
+                return Math.PI*r*r;
+        }
+        /**
+         * Determina si un punto del plano está contenido en un cículo de radio r y centro en coordenadas
+         * cartesians x e y
+         * @param px componente x del punto
+         * @param py componente x del punto
+         * @return true si el punto está dentro del círculo o false en otro caso
+         */
+         
+        public boolean contiene(double px, double py) {
+                
+                //Formula matematica 
+                if(Math.sqrt(Math.pow((x-px),2) + Math.pow((y-py),2))<= r) {
+                        return true;                        
+                }else {
+                        return false;
+                }
+        }
+        
+}
+ 

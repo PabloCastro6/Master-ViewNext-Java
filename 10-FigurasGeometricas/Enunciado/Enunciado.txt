@@ -1,0 +1,4 @@
+Se quiere calcular el área y el perímetro de diferentes figuras geométricas, por ejemplo, 
+rectángulo, cuadrado, círculo. 
+Realiza dos soluciones una usando clases abstractas y otra usando interfaz. 
+Añade una nueva figura geométrica ¿Qué solución de las anteriores se adapta mejor?
