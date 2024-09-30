@@ -9,6 +9,7 @@ public class Rectangulo extends Figura {
 		this.base = base;
 		this.altura = altura;
 	}
+
 	@Override
 	public double calcularArea() {
 		// TODO Auto-generated method stub

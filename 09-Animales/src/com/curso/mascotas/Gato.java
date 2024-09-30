@@ -1,4 +1,10 @@
 package com.curso.mascotas;
+/**
+ *Clase gato 
+ *
+ *@author Pablo Castro
+ *@version 1.0 26/09/2024
+ */
 
 import com.curso.animales.Animal;
 

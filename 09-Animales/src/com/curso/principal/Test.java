@@ -1,6 +1,6 @@
 package com.curso.principal;
 
-import com.curso.animales.Araña;
+import com.curso.animales.Arania;
 import com.curso.mascotas.Gato;
 import com.curso.mascotas.Pez;
 
@@ -8,9 +8,9 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Araña araña = new Araña();
-		araña.andar();
-		araña.comer();
+		Arania arania = new Arania();
+		arania.andar();
+		arania.comer();
 		
 		Gato gato = new Gato("Machu");
 		gato.andar();

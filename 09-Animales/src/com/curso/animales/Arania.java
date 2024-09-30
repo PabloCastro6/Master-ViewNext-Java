@@ -1,8 +1,8 @@
 package com.curso.animales;
 
-public class Araña extends Animal{
+public class Arania extends Animal{
 
-	public Araña() {
+	public Arania() {
 		super(8);
 		
 	}

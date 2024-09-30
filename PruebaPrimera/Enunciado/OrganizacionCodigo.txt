@@ -1,0 +1,30 @@
+ORGANIZACIÓN: 
+Proyecto Maven:  En el XML hay que meterle las dependencias x
+
+Clase Vehículo: Definir propiedades y comportamientos
+-	Propiedades: Color, velocidad, capacidad. Estas propiedades las comparten todos los vehículos: coche, moto, barco. 
+
+El color podría estar en la clase vehículo ya que se aplica a cualquier vehículo. 
+Métodos: Como arrancar, parar, acelerar. Ya que son métodos genéricos. 
+
+
+Interfaz Conducible: 
+Define el contrato para cualquier clase que sea “conducible”
+Métodos: 
+Conducir(): forma de manejar el vehículo
+Avanzar()
+retroceder()
+parar(), son métodos relacionados con el movimiento. 
+
+Clase Coche: (Subclase de vehículo)
+Hereda las propiedades generales de vehículo
+Implementación de Conducible: Implementa los métodos de la interfaz Conducible
+Propiedades:
+Matricula(inmutable): Se define al crear el coche, no se puede modificar.
+Numero de Ruedas(constante): Tienen 4 ruedas.
+Color(mutable): Puedes cambiarlo en cualquier momento
+
+Métodos: 
+Conducir() donde se puede definir el comportamiento
+arrancar()
+parar() 
