@@ -57,7 +57,19 @@ public class Coche extends Vehiculo implements Conducible {
         this.color = color;
     }
 
+    public long getTiempoInicioViaje() {
+        return tiempoInicioViaje;
+    }
 
+
+
+
+	public double getVelocidad() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+    
+    
 
 	
 	
