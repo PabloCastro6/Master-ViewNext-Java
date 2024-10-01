@@ -6,10 +6,6 @@ package com.prueba.vehiculo.interfaces;
  * vehículo puede arrancar, avanzar, retroceder y detenerse.
  */
 public interface Conducible {
-	void arrancar();
-
-	void avanzar(double distancia, int velocidad);
-
-	void parar();
-
+	    void avanzar(double distanciaKm, double velocidad);
+	    void parar();
 }

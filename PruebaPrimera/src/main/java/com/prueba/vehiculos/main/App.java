@@ -1,6 +1,9 @@
 
 package com.prueba.vehiculos.main;
 
+import java.util.List;
+
+import com.prueba.vehiculo.Camion;
 import com.prueba.vehiculo.Coche;
 
 public class App {
@@ -14,12 +17,21 @@ public class App {
 	 */
 
 	public static void main(String[] args) {
-		Coche miCoche = new Coche("Rojo", "1234_ABC");
-		miCoche.arrancar();
-		miCoche.avanzar(6.0, 100); //Avanzar 6km a 100km/h
-		miCoche.avanzar(10.0, 80);
-		miCoche.parar();
+		Coche miCoche = new Coche("ABC123", "Rojo");
+		miCoche.arrancar(); // Hora de inicio del viaje
+		miCoche.avanzar(35, 100);// Avanzo x metros a x km/hora
+		System.out.println("Metros avanzados: " + miCoche.getMetrosRecorridos());
+		miCoche.parar(); // Tiempo final del viaje
+		
+		System.out.println("==========");
+		
+		Camion camion = new Camion();
+		camion.agregarVelocidad(60.0);
+		camion.agregarVelocidad(80.0);
+		camion.agregarVelocidad(100.0);
 
+		List<Double> tacometro = camion.getTacometro();
+		System.out.println("Tacómetro: " + tacometro);
 	}
 
 }
