@@ -6,6 +6,13 @@ import java.text.SimpleDateFormat;
 import com.prueba.vehiculo.interfaces.Conducible;
 import com.prueba.vehiculos.model.Vehiculo;
 
+/**
+ * class Coche
+ * 
+ * @author Pablo Castro
+ * @version 1.0, 30 sept 2024
+ */
+
 public class Coche extends Vehiculo implements Conducible {
     private String color;
     private int metrosRecorridos;
@@ -23,7 +30,11 @@ public class Coche extends Vehiculo implements Conducible {
         metrosRecorridos += (int) (distanciaKm * 1000);
     }
 
-    
+    /**
+     * Detiene el coche y muestra la hora de parada del viaje.
+     * 
+     * @see #arrancar()
+     */
     public void parar() {
         double distanciaRecorridaKm = metrosRecorridos / 1000.0;
         double tiempoTranscurridoHoras = distanciaRecorridaKm / velocidad;
@@ -47,6 +58,11 @@ public class Coche extends Vehiculo implements Conducible {
         return metrosRecorridos;
     }
 
+    /**
+     * Inicia el viaje del coche y establece la hora de inicio del viaje.
+     * 
+     * @see #parar()
+     */
     public void arrancar() {
         tiempoInicioViaje = System.currentTimeMillis();
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
@@ -57,17 +73,19 @@ public class Coche extends Vehiculo implements Conducible {
         this.color = color;
     }
 
+   
+
     public long getTiempoInicioViaje() {
         return tiempoInicioViaje;
     }
 
 
-
-
 	public double getVelocidad() {
-		// TODO Auto-generated method stub
-		return 0;
+		return velocidad;
 	}
+
+
+	
     
     
 
