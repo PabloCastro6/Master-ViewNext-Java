@@ -1,7 +1,0 @@
-package com.cursoJava.cuenta;
-
-public class Cuenta {
-	String titular;
-	Double cantidad;
-
-}

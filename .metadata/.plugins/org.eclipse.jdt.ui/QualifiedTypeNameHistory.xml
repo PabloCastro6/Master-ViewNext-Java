@@ -11,4 +11,13 @@
     <fullyQualifiedTypeName name="com.curso.animales.Araña"/>
     <fullyQualifiedTypeName name="com.curso.mascotas.Gato"/>
     <fullyQualifiedTypeName name="com.curso.mascotas.Pez"/>
+    <fullyQualifiedTypeName name="com.curso.Calculadora"/>
+    <fullyQualifiedTypeName name="com.prueba.vehiculo.interfaces.Conducible"/>
+    <fullyQualifiedTypeName name="com.prueba.vehiculos.model.Coche"/>
+    <fullyQualifiedTypeName name="com.prueba.vehichulo.Coche"/>
+    <fullyQualifiedTypeName name="com.prueba.vehiculos.model.Vehiculo"/>
+    <fullyQualifiedTypeName name="java.time.LocalTime"/>
+    <fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
+    <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="java.time.Duration"/>
 </qualifiedTypeNameHistroy>
