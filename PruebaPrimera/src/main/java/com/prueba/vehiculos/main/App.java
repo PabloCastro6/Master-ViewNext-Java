@@ -15,7 +15,7 @@ public class App {
 	 * 
 	 * @param args Argumentos de línea de comandos.
 	 */
-
+	
 	public static void main(String[] args) {
 		Coche miCoche = new Coche("ABC123", "Rojo");
 		miCoche.arrancar(); // Hora de inicio del viaje
