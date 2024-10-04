@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calcular la potencia</title>
+</head>
+<!--  
+3- Cree una página HTML e incluya el código JavaScript necesario para que utilizando un bucle for calcule el valor de x elevado a y. 
+-->
+<body>
+
+<script>
+let numero = prompt("Escribe un número mayor que 1");
+
+if (numero > 1) {
+    let suma = 0;
+    let resultado = "";
+
+    
+    for (let i = 1; i <= numero; i++) {
+        suma += i;
+
+       
+        if (i % 2 === 0) {
+            resultado += i + " es un número par<br>";
+        } else {
+            resultado += i + " es un número impar<br>";
+        }
+    }
+
+    
+    alert(resultado + "\nLa suma de los números de 1 a " + numero + " es: " + suma)
+
+
+} else {
+    alert("ingrese un número mayor que 1.");
+}
+
+
+
+
+</script>
+
+<br>Otra vez fuera de javascript
+</body>
+</html>

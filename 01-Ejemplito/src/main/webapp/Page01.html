@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ejemplo alert java</title>
+<script>
+alert("Saludos, por fin Viernes");
+</script>
+</head>
+<!--  
+1 - Realice una página HTML que le pida un dato al usuario y le diga si el número es par o impar.
+2- Realice una página web que muestre los números del 15 al 1, diga si el número es par o impar y la cantidad de números pares o impares.
+3- Cree una página HTML e incluya el código JavaScript necesario para que utilizando un bucle for calcule el valor de x elevado a y. 
+-->
+<body>
+<p>Hola Mundo, desde JavaScript</p>
+<script>
+let numero = prompt("Escribe un numero y te digo si es par o impar");
+if(numero%2==0)
+	document.write(" El numero es par");
+else
+	document.write(" El numero es impar");
+document.write("<br");
+document.write("*****************************<br");
+
+let totalPares = 0;
+let totalImpares = 0;
+
+for(numero =15; numero > 0; numero--) {
+	document.write(numero);
+	if(numero%2==0) {
+		document.write(" El numero es par <br>");
+	totalPares++;
+}else {
+	document.write(" El numero es impar <br>");
+	totalImpares++;
+}
+}
+
+document.write(" Total pares: ) " +totalPares+"<br>");
+document.write(" Total impares: ) " +totalImpares+"<br>");
+
+</script>
+
+Otra vez fuera de javascript
+</body>
+</html>
