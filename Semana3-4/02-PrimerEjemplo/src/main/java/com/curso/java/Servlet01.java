@@ -33,6 +33,8 @@ public class Servlet01 extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		
+		
+		
 		for(int i = 0; i<10; i++) {
 			out.println("Por fin viernes.<br>");
 		}

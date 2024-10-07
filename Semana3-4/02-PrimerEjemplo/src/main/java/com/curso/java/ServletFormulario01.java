@@ -1,7 +1,6 @@
 package com.curso.java;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,12 +27,25 @@ public class ServletFormulario01 extends HttpServlet {
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<meta charset=\"UTF-8\">");
-		out.println("<title></title>");
+		out.println("<title>Servler ECO DATOS</title>");
 		out.println("</head>");
 		out.println("<body>");
 		
-		out.println(request.getParameter("nombre"));
-		out.println(request.getParameter("edad"));
+		//Coger parametros del formulario
+		String nombre = request.getParameter("nombre");
+        String edad = request.getParameter("edad");
+        String numero = request.getParameter("numero");
+		
+		//Convertir el numeroUsuario a entero
+		int numeroU = Integer.parseInt(numero);
+		//Otra forma: int tope= Integer.parseInt(request.getParameter("numero"));
+		
+		//imprimir tantas veces
+		for(int i = 0; i < numeroU; i++) {
+			out.println("<p>" + nombre + " tiene " + edad + " años.</p>");
+		}
+		
+		
 		
 		out.println("</body>");
 		out.println("</html>");
@@ -42,6 +54,9 @@ public class ServletFormulario01 extends HttpServlet {
 		out.close();
 		
 		
+		
+		
 	}
+	
 
 }

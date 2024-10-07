@@ -29,4 +29,24 @@
     <servlet-name>ServletFormulario01</servlet-name>
     <url-pattern>/ServletFormulario01</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFormulario04</display-name>
+    <servlet-name>ServletFormulario04</servlet-name>
+    <servlet-class>com.curso.java.ServletFormulario04</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFormulario04</servlet-name>
+    <url-pattern>/ServletFormulario04</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletFormulario05</display-name>
+    <servlet-name>ServletFormulario05</servlet-name>
+    <servlet-class>com.curso.java.ServletFormulario05</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletFormulario05</servlet-name>
+    <url-pattern>/ServletFormulario05</url-pattern>
+  </servlet-mapping>
 </web-app>
