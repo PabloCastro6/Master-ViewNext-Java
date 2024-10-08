@@ -21,7 +21,7 @@ public class Alumno {
         cursosMatriculados.add(curso);
     }
 
-	public List<Curso> getCursoMatriculados() {
+	public List<Curso> getCursosMatriculados() {
 		return cursosMatriculados;
 	}
 	
