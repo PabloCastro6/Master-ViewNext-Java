@@ -5,11 +5,14 @@
     <title>Matriculación de Curso</title>
 </head>
 <body>
-    <h2>Matriculación</h2>
-    <form action="RegistrarCursoServlet" method="get">
-        Curso: <input type="text" name="curso" />
-        <input type="hidden" name="nombreAlumno" value="${nombreAlumno}" />
-        <input type="submit" value="Enviar curso" />
-    </form>
+   <form action="registrarCursoServlet" method="get">
+    <label for="nombreAlumno">Nombre del Alumno:</label>
+    <input type="text" id="nombreAlumno" name="nombreAlumno"><br>
+    
+    <label for="curso">Nombre del Curso:</label>
+    <input type="text" id="curso" name="curso"><br>
+    
+    <input type="submit" value="Matricular">
+</form>
 </body>
 </html>

@@ -29,8 +29,5 @@
     <servlet-name>RegistrarCursoServlet</servlet-name>
     <url-pattern>/RegistrarCursoServlet</url-pattern>
   </servlet-mapping>
-<servlet-mapping>
-    <servlet-name>RegistrarCursoServlet</servlet-name>
-    <url-pattern>/matricular</url-pattern>
-</servlet-mapping>
+
 </web-app>
