@@ -30,7 +30,7 @@ public class RegistrarCursoServlet extends HttpServlet {
         }
 
         if (alumno == null) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El alumno no está registrado.");
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "El alumno no está registrado."); //Constante que dice el estado HTTP400, VALIDA O NO(HttpServletResponse.SC_BAD_REQUEST)
             return;
         }
 
