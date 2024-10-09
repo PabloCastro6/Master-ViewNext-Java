@@ -23,7 +23,7 @@ public class Entrada extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String usuario = request.getParameter("usuario");
-		Perfil perfil = (Perfil) request.getParameter("perfil");
+		Perfil perfil = (Perfil) request.getAttribute("perfil");
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
