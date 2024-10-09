@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="com.curso.modelos.Pagina"/>
     <fullyQualifiedTypeName name="com.curso.interfaces.Imprime"/>
     <fullyQualifiedTypeName name="com.curos.estatic1.Persona"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.curso.animales.Animal"/>
     <fullyQualifiedTypeName name="com.curso.animales.Araña"/>
     <fullyQualifiedTypeName name="com.curso.mascotas.Gato"/>
@@ -27,5 +26,16 @@
     <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
     <fullyQualifiedTypeName name="com.curso.calculadora.Calculadora"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.curso.modelo.Producto"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="com.curso.utilidad.GestorDatos"/>
+    <fullyQualifiedTypeName name="com.curso.modelo.Curso"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.curso.modelo.Alumno"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
