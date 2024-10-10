@@ -25,7 +25,7 @@ public class BuscarPaginas extends HttpServlet {
         String tematica = request.getParameter("tematica");
 
         // Buscar páginas relacionadas con la temática
-        List<PaginaWeb> paginas = (List<PaginaWeb>) servicio.buscarPorTematica(tematica);
+        List<PaginaWeb> paginas = servicio.buscarPorTematica(tematica);
 
         if (paginas != null && !paginas.isEmpty()) {
             // Si se encuentran páginas, pasarlas como atributo a la solicitud

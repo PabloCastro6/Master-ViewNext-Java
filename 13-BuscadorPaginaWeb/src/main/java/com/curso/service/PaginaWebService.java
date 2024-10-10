@@ -14,10 +14,9 @@ public class PaginaWebService {
 
 
 
-	public PaginaWeb buscarPorTematica(String tematica) {
-        return paginas.stream()
-            .filter(p -> p.getTematica().equalsIgnoreCase(tematica))
-            .findFirst()  // Buscar la primera coincidencia
-            .orElse(null);  // Si no hay coincidencias, retorna null
-    }
+	 public List<PaginaWeb> buscarPorTematica(String tematica) {
+	        return paginas.stream()
+	            .filter(p -> p.getTematica().equalsIgnoreCase(tematica))
+	            .collect(Collectors.toList());
+	    }
 }
