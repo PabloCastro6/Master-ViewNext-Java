@@ -6,4 +6,15 @@ Tareas por hacer:
 
 2.Tabla de Multiplicar con JSP Llamado Ejemplo JSP Tabla de Multiplicar  x
 
-3. Buscador de tematica, usando capas primero con servlet y despues usando JSP donde sea conveniente
+3. Buscador de tematica, usando capas primero con servlet x
+ Despues usando JSP donde sea conveniente
+ 
+ 
+ 
+ Proyecto: CORRECION
+ Paquete modelo: camion y coche
+ Interfad: cambiar el comentario
+ Clase camion: extends Vehiculo implements 
+ hacer un paquete en la parte de Test
+ probar a hacer una clase enum  : color
+ 

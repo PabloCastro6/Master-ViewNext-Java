@@ -13,7 +13,7 @@ public class PaginaWebService {
 			
 
 
-
+	//buscar tematica y que devuelva una lista
 	 public List<PaginaWeb> buscarPorTematica(String tematica) {
 	        return paginas.stream()
 	            .filter(p -> p.getTematica().equalsIgnoreCase(tematica))
