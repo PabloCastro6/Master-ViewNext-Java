@@ -29,16 +29,7 @@
     <servlet-name>MostrarResultados</servlet-name>
     <url-pattern>/MostrarResultados</url-pattern>
   </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Error</display-name>
-    <servlet-name>Error</servlet-name>
-    <servlet-class>com.curso.servlet.Error</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Error</servlet-name>
-    <url-pattern>/Error</url-pattern>
-  </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ErrorServlet</display-name>

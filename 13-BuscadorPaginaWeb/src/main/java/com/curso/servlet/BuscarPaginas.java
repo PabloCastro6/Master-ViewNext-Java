@@ -2,63 +2,42 @@ package com.curso.servlet;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 
 import com.curso.modelo.PaginaWeb;
 import com.curso.service.PaginaWebService;
 
-/**
- * Servlet implementation class BuscarPaginas
- */
 public class BuscarPaginas extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       private PaginaWebService servicio;
-    
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
-		// Inicializa el servicio si aún no está inicializado
-	    if (servicio == null) {
-	        servicio = new PaginaWebService();
-	    }
+    private static final long serialVersionUID = 1L;
 
-	    // Obtener la temática ingresada por el usuario
-	    String tematica = request.getParameter("tematica");
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-	    // Buscar la página por temática
-	    PaginaWeb pagina = servicio.buscarPorTematica(tematica);
+        // Crear una instancia de PaginaWebService
+        PaginaWebService servicio = new PaginaWebService();
 
-	   
-	    response.setContentType("text/html");
-	    PrintWriter out = response.getWriter();
-	    
-	    out.println("<!DOCTYPE html>");
-	    out.println("<html>");
-	    out.println("<head>");
-	    out.println("<meta charset=\"UTF-8\">");
-	    out.println("<title>Resultados de Búsqueda</title>");
-	    out.println("</head>");
-	    out.println("<body>");
+        // Obtener la temática ingresada por el usuario
+        String tematica = request.getParameter("tematica");
 
-	    if (pagina != null) {
-	        out.println("<h1>Resultados de Búsqueda</h1>");
-	        out.println("<p>Dirección: <a href='" + pagina.getDireccion() + "'>" + pagina.getDireccion() + "</a></p>");
-	        out.println("<p>Temática: " + pagina.getTematica() + "</p>");
-	        out.println("<p>Descripción: " + pagina.getDescripcion() + "</p>");
-	    } else {
-	        out.println("<h1>No se encontraron resultados para la temática: " + tematica + "</h1>");
-	    }
+        // Buscar páginas relacionadas con la temática
+        List<PaginaWeb> paginas = (List<PaginaWeb>) servicio.buscarPorTematica(tematica);
 
-	    out.println("</body>");
-	    out.println("</html>");
-	    out.close();
-	}
+        if (paginas != null && !paginas.isEmpty()) {
+            // Si se encuentran páginas, pasarlas como atributo a la solicitud
+            request.setAttribute("paginas", paginas);
+
+            // Redirigir al servlet MostrarResultados
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/MostrarResultados");
+            dispatcher.forward(request, response);
+        } else {
+            // Si no se encuentran páginas, redirigir al ErrorServlet
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/ErrorServlet");
+            dispatcher.forward(request, response);
+        }
+    }
 }
