@@ -6,6 +6,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Admin\Desktop\Eclipse\Semana3-4\11-ValidacionCapas"/>
 			<item value="C:\Users\Admin\Desktop\Eclipse\Semana3-4\Servers"/>
 			<item value="C:\Users\Admin\Desktop\Eclipse\Semana3-4\02-PrimerEjemplo"/>
 			<item value="C:\Users\Admin\Desktop\Eclipse\Semana3-4\01-Ejemplito"/>

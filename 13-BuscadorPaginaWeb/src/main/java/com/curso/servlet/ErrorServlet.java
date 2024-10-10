@@ -26,11 +26,11 @@ public class ErrorServlet extends HttpServlet {
         out.println("<html>");
         out.println("<head>");
         out.println("<meta charset=\"UTF-8\">");
-        out.println("<title>Error de Autenticación</title>");
+        out.println("<title>Error en la búsqueda</title>");
         out.println("</head>");
         out.println("<body>");
-        out.println("<h1>Error: Usuario o contraseña incorrectos.</h1>");
-        out.println("<a href=\"login.html\">Volver al Login</a>");
+        out.println("<h1>No se encontraron páginas con la temática ingresada</h1>");
+        out.println("<a href=\"busqueda.html\">Volver a buscar otra temática</a>");
         out.println("</body>");
         out.println("</html>");
 

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import com.curso.modelo.PaginaWeb;
 
 public class PaginaWebService {
-	List<PaginaWeb> pagina = List.of(new PaginaWeb("https://www.pccomponentes.com/dias-naranjas", "Tecnología", "Una página sobre tecnología"),
+	List<PaginaWeb> paginas = List.of(new PaginaWeb("https://www.pccomponentes.com/dias-naranjas", "Tecnología", "Una página sobre tecnología"),
 			new PaginaWeb("https://www.hellofresh.es/recipes/recetas-caseras", "Comida", "Una página sobre comida"),
 			new PaginaWeb("https://elpais.com/", "Noticias", "Una página sobre noticias"));
 			
@@ -14,9 +14,10 @@ public class PaginaWebService {
 
 
 
-public List<PaginaWeb> buscarPorTematica(String tematica) {
-    return pagina.stream()
-        .filter(p -> p.getTematica().equalsIgnoreCase(tematica))
-        .collect(Collectors.toList());
-}
+	public PaginaWeb buscarPorTematica(String tematica) {
+        return paginas.stream()
+            .filter(p -> p.getTematica().equalsIgnoreCase(tematica))
+            .findFirst()  // Buscar la primera coincidencia
+            .orElse(null);  // Si no hay coincidencias, retorna null
+    }
 }

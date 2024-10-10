@@ -1,0 +1,9 @@
+
+
+Tareas por hacer: 
+
+1. Ejercicio de matriculacion (Persona y Cursos) Llamado EjercicioMartes   x 
+
+2.Tabla de Multiplicar con JSP Llamado Ejemplo JSP Tabla de Multiplicar  x
+
+3. Buscador de tematica, usando capas primero con servlet y despues usando JSP donde sea conveniente
