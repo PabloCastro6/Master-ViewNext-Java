@@ -10,60 +10,51 @@ import java.util.List;
 
 import com.almacen.dao.ProductoDAO;
 import com.almacen.modelo.Producto;
+import com.almacen.modelo.Categoria;
 
-/**
- * Servlet implementation class ProductoServlet
- */
 public class ProductoServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	 private ProductoDAO productoDAO = new ProductoDAO();
+    private static final long serialVersionUID = 1L;
+    private ProductoDAO productoDAO = new ProductoDAO();
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		 String action = request.getParameter("action");
-		
-		 if ("alta".equals(action)) {
-	            Producto producto = new Producto(
-	                request.getParameter("nombre"),
-	                request.getParameter("categoria"),
-	                Double.parseDouble(request.getParameter("precio")),
-	                Integer.parseInt(request.getParameter("stock"))
-	            );
-	            productoDAO.agregarProducto(producto);
-	            System.out.println("Producto añadido: " + producto.getNombre());
-	            listarProductos(request, response); // Llama a listarProductos después de agregar el producto
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String action = request.getParameter("action");
 
-	        } else if ("eliminar".equals(action)) {
-	            productoDAO.eliminarProducto(request.getParameter("nombre"));
-	            listarProductos(request, response);
+        if ("alta".equals(action)) {
+            agregarProducto(request);
+            listarProductos(request, response);
 
-	        } else if ("modificar".equals(action)) {
-	            Producto producto = new Producto(
-	                request.getParameter("nombre"),
-	                request.getParameter("categoria"),
-	                Double.parseDouble(request.getParameter("precio")),
-	                Integer.parseInt(request.getParameter("stock"))
-	            );
-	            productoDAO.actualizarProducto(producto);
-	            listarProductos(request, response);
+        } else if ("eliminar".equals(action)) {
+            productoDAO.eliminarProducto(request.getParameter("nombre"));
+            listarProductos(request, response);
 
-	        } else if ("buscar".equals(action)) {
-	            Producto producto = productoDAO.buscarProducto(request.getParameter("nombre"));
-	            request.setAttribute("producto", producto);
-	            request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
+        } else if ("modificar".equals(action)) {
+            agregarProducto(request);
+            listarProductos(request, response);
 
-	        } else if ("listar".equals(action)) {
-	            listarProductos(request, response);
-	        }
-	    }
+        } else if ("buscar".equals(action)) {
+            Producto producto = productoDAO.buscarProducto(request.getParameter("nombre"));
+            request.setAttribute("producto", producto);
+            request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
 
-	    private void listarProductos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	        List<Producto> productos = productoDAO.listarProductos();
-	        request.setAttribute("productos", productos);
-	        request.getRequestDispatcher("productos.jsp").forward(request, response);
-	    }
-	}
+        } else if ("listar".equals(action)) {
+            listarProductos(request, response);
+        }
+    }
+
+    private void agregarProducto(HttpServletRequest request) {
+        String nombre = request.getParameter("nombre");
+        Categoria categoria = Categoria.valueOf(request.getParameter("categoria").toUpperCase());
+        double precio = Double.parseDouble(request.getParameter("precio"));
+        int stock = Integer.parseInt(request.getParameter("stock"));
+
+        Producto producto = new Producto(nombre, categoria, precio, stock);
+        productoDAO.agregarProducto(producto);
+    }
+
+    private void listarProductos(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Producto> productos = productoDAO.listarProductos();
+        request.setAttribute("productos", productos);
+        request.getRequestDispatcher("productos.jsp").forward(request, response);
+    }
+}
