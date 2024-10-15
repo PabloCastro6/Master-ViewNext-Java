@@ -1,39 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>   
-    <%@ page import="java.util.List" %>
-  <%@ page import="com.almacen.modelo.Pedido" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.List" %>
+<%@ page import="com.almacen.modelo.Producto" %>
+<%@ page import="com.almacen.dao.ProductoDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Listar Productos</title>
+<title>Listado de Productos</title>
 </head>
 <body>
- <h2>Listado de Pedidos</h2>
+    <h2>Listado de Productos</h2>
     
     <table border="1">
         <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Estado</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
         </tr>
         <%
-            // Obtener la lista de pedidos desde el request
-            List<Pedido> pedidos = (List<Pedido>) request.getAttribute("pedidos");
-            if (pedidos != null && !pedidos.isEmpty()) {
-                for (Pedido pedido : pedidos) {
+            // Obtener la lista de productos desde el request
+            ProductoDAO service = new ProductoDAO();
+       
+            List<Producto> productos = service.listarProductos();
+            request.setAttribute("productos", productos);
+            
+            if (productos != null && !productos.isEmpty()) {
+                for (Producto producto : productos) {
         %>
         <tr>
-            <td><%= pedido.getProducto().getNombre() %></td>
-            <td><%= pedido.getCantidad() %></td>
-            <td><%= pedido.getEstado() %></td>
+            <td><%= producto.getNombre() %></td>
+            <td><%= producto.getCategoria() %></td>
+            <td><%= producto.getPrecio() %></td>
+            <td><%= producto.getStock() %></td>
         </tr>
         <%
                 }
             } else {
         %>
         <tr>
-            <td colspan="3">No hay pedidos registrados.</td>
+            <td colspan="4">No hay productos disponibles.</td>
         </tr>
         <%
             }
@@ -41,6 +47,5 @@
     </table>
     
     <a href="menu.jsp">Volver al Menú</a>
-
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 Tareas por hacer: 
 
-1. Ejercicio de matriculacion (Persona y Cursos) Llamado EjercicioMartes   x 
+1. Ejercicio de matriculacion (Persona y Cursos) Llamado EjercicioMartes   x  //Mirar el metodo POST. Usar sesiones, quitar el formulario. 
 
 2.Tabla de Multiplicar con JSP Llamado Ejemplo JSP Tabla de Multiplicar  x
 

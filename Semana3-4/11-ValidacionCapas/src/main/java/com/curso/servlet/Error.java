@@ -18,8 +18,12 @@ public class Error extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		// Comprobacion despues de meter los datos
+		
 		String usuario = request.getParameter("usuario");
 		String pwd = request.getParameter("pwd");
 

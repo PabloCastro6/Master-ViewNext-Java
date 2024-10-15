@@ -16,7 +16,7 @@ public class RegistrarCursoServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public static List<Curso> cursos = new ArrayList<>();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPOST(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombreAlumno = request.getParameter("nombreAlumno");
         String nombreCurso = request.getParameter("curso");
 

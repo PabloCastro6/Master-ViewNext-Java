@@ -6,6 +6,7 @@
 </head>
 <body>
     <h1>Buscar Páginas Web</h1>
+    <!-- Hacer un select para las tematicas -->
     <form action="BuscarPaginas" method="POST">
         <label for="tematica">Temática:</label>
         <input type="text" id="tematica" name="tematica" required>

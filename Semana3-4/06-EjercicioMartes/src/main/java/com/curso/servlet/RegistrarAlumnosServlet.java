@@ -15,7 +15,7 @@ public class RegistrarAlumnosServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public static List<Alumno> alumnos = new ArrayList<>();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombreAlumno = request.getParameter("nombre");
 
         // Registrar alumno si no existe

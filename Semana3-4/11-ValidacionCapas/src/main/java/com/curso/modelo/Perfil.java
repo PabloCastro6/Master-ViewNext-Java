@@ -5,6 +5,7 @@ public class Perfil {
 	private String password;
 	private String correo;
 	private int edad;
+	
 	public Perfil(String nombre, String password, String correo, int edad) {
 		super();
 		this.nombre = nombre;

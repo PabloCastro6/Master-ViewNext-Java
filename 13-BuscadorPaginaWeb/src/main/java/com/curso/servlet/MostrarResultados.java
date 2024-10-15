@@ -32,7 +32,7 @@ public class MostrarResultados extends HttpServlet {
         List<PaginaWeb> paginas = (List<PaginaWeb>) request.getAttribute("paginas");
         if (paginas != null && !paginas.isEmpty()) {
             for (PaginaWeb pagina : paginas) {
-            	out.println("<p>Tematica: " + pagina.getDescripcion());
+            	out.println("<p>Tematica: " + pagina.getTematica());
                 out.println("<p>Dirección: <a href='" + pagina.getDireccion() + "'>" + pagina.getDireccion() + "</a></p>");
                 out.println("<p>Descripción: " + pagina.getDescripcion() + "</p>");
                 out.println("<hr>");
