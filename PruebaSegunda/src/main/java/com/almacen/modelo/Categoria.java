@@ -5,5 +5,6 @@ public enum Categoria {
     ACCESORIOS,
     ROPA,
     HOGAR,
-    ALIMENTOS
+    ALIMENTACION,
+    DEPORTES
 }

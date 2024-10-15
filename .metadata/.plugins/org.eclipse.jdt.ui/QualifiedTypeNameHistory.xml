@@ -43,8 +43,11 @@
     <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="com.curso.modelo.PaginaWeb"/>
     <fullyQualifiedTypeName name="com.curso.model.Curso"/>
+    <fullyQualifiedTypeName name="java.math.BigDecimal"/>
     <fullyQualifiedTypeName name="com.almacen.dao.ProductoDAO"/>
-    <fullyQualifiedTypeName name="com.almacen.modelo.Producto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.almacen.modelo.Producto"/>
+    <fullyQualifiedTypeName name="com.almacen.dao.PedidoDAO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.almacen.modelo.Pedido"/>
 </qualifiedTypeNameHistroy>

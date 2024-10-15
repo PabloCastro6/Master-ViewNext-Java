@@ -38,8 +38,11 @@ public class ProductoServlet extends HttpServlet {
 	                listarProductos(request, response);
 	                break;
 	            case "buscar":
-	                buscarProducto(request, response);
+	            	List<Producto> productos = productoDAO.listarProductos();
+	                request.setAttribute("productos", productos);
+	                request.getRequestDispatcher("buscarProducto.jsp").forward(request, response);
 	                break;
+	           
 	            default:
 	                response.sendRedirect("menu.jsp");
 	                break;
@@ -84,4 +87,8 @@ public class ProductoServlet extends HttpServlet {
 	        request.setAttribute("producto", producto);
 	        request.getRequestDispatcher("detalleProducto.jsp").forward(request, response);
 	    }
+	    
+
+	    
+	    
 	}

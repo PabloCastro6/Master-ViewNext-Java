@@ -10,7 +10,7 @@
 	  <h2>Menú Principal</h2>
     <ul>
         <li><a href="listarProductos.jsp">Listar Productos</a></li>
-        <li><a href="buscarProducto.html">Buscar Producto</a></li>
+        <li><a href="buscarProducto.jsp">Buscar Producto</a></li>
         <li><a href="agregarProducto.html">Agregar Producto</a></li>
         <li><a href="modificarProducto.html">Modificar Producto</a></li>
         <li><a href="borrarProducto.html">Borrar Producto</a></li>

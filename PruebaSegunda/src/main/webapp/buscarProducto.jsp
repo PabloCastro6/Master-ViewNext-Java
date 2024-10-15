@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>    
-<%@ page import="com.almacen.modelo.Producto" %>  
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>    
+<%@ page import="java.util.List" %>
+<%@ page import="com.almacen.modelo.Producto" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,18 +8,34 @@
 <title>Buscar Producto</title>
 </head>
 <body>
-<h2>Buscar Producto</h2>
+    <h2>Buscar Producto</h2>
     <form action="ProductoServlet" method="post">
         <input type="hidden" name="action" value="buscar"/>
         
-        <label for="nombre">Nombre del Producto:</label>
-        <input type="text" id="nombre" name="nombre" required/>
+        <label for="producto">Seleccione un Producto:</label>
+        <select id="producto" name="nombre" required>
+            <%
+                // Obtener la lista de productos desde el request
+                List<Producto> productos = (List<Producto>) request.getAttribute("productos");
+                if (productos != null && !productos.isEmpty()) {
+                    for (Producto producto : productos) {
+            %>
+                        <option value="<%= producto.getNombre() %>"><%= producto.getNombre() %></option>
+            <%
+                    }
+                } else {
+            %>
+                <option value="">No hay productos disponibles</option>
+            <%
+                }
+            %>
+        </select>
         
         <button type="submit">Buscar</button>
     </form>
 
     <%
-        // Verificar si se ha encontrado un producto después de la búsqueda
+        // Mostrar el resultado de la búsqueda si se ha encontrado un producto
         Producto producto = (Producto) request.getAttribute("producto");
         if (producto != null) {
     %>

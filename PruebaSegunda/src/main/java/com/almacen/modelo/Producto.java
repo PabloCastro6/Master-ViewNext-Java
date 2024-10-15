@@ -3,6 +3,7 @@ package com.almacen.modelo;
 import java.math.BigDecimal;
 
 public class Producto {
+	
     private String nombre;
     private Categoria categoria; // Usar el enum Categoria en lugar de String
     private BigDecimal precio;
