@@ -1,12 +1,14 @@
 package com.almacen.modelo;
 
+import java.math.BigDecimal;
+
 public class Producto {
     private String nombre;
     private Categoria categoria; // Usar el enum Categoria en lugar de String
-    private double precio;
+    private BigDecimal precio;
     private int stock;
 
-    public Producto(String nombre, Categoria categoria, double precio, int stock) {
+    public Producto(String nombre, Categoria categoria, BigDecimal precio, int stock) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precio = precio;
@@ -30,11 +32,11 @@ public class Producto {
         this.categoria = categoria;
     }
 
-    public double getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

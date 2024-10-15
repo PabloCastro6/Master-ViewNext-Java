@@ -42,7 +42,9 @@
     <fullyQualifiedTypeName name="com.curso.service.PaginaWebService"/>
     <fullyQualifiedTypeName name="jakarta.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="com.curso.modelo.PaginaWeb"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.curso.model.Curso"/>
+    <fullyQualifiedTypeName name="com.almacen.dao.ProductoDAO"/>
+    <fullyQualifiedTypeName name="com.almacen.modelo.Producto"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

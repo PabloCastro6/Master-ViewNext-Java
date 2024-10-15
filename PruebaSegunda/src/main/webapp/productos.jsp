@@ -54,4 +54,4 @@
 	<a href="agregarProducto.jsp">Agregar Nuevo Producto</a>
 </body>
 </html>
->
+

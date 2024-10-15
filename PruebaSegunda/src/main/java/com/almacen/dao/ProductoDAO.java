@@ -24,9 +24,9 @@ public class ProductoDAO {
     }
 
     public void eliminarProducto(String nombre) {
-    	 System.out.println("Intentando eliminar producto con nombre: " + nombre);
+    	// System.out.println("Intentando eliminar producto con nombre: " + nombre);
         productos.removeIf(p -> p.getNombre().equals(nombre));
-        System.out.println("Productos después de eliminar: " + productos.size());
+      //  System.out.println("Productos después de eliminar: " + productos.size());
     }
 
     public void actualizarProducto(Producto producto) {

@@ -19,4 +19,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PedidoServlet</display-name>
+    <servlet-name>PedidoServlet</servlet-name>
+    <servlet-class>com.almacen.Servlets.PedidoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PedidoServlet</servlet-name>
+    <url-pattern>/PedidoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
