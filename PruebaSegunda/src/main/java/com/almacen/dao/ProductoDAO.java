@@ -1,5 +1,6 @@
 package com.almacen.dao;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import com.almacen.modelo.Producto;
@@ -10,9 +11,9 @@ public class ProductoDAO {
 
     static {
         // Productos 
-        productos.add(new Producto("Ordenador", Categoria.ELECTRONICA, 1200.50, 10));
-        productos.add(new Producto("Teléfono", Categoria.ELECTRONICA, 650.00, 20));
-        productos.add(new Producto("Teclado", Categoria.ACCESORIOS, 25.99, 50));
+    	productos.add(new Producto("Ordenador", Categoria.ELECTRONICA, new BigDecimal("1200.50"), 10));
+        productos.add(new Producto("Teléfono", Categoria.ELECTRONICA, new BigDecimal("650.00"), 20));
+        productos.add(new Producto("Teclado", Categoria.ACCESORIOS, new BigDecimal("25.99"), 50));
     }
 
     public void agregarProducto(Producto producto) {
