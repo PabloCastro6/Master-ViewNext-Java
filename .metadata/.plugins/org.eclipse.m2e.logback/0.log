@@ -3158,3 +3158,5 @@ Caused by: java.lang.Exception: File not found: C:\Users\Admin\Desktop\Eclipse\E
 2024-10-16 09:54:21,047 [Worker-54: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: EjemploRest:EjemploRest:0.0.1-SNAPSHOT @ C:\Users\Admin\Desktop\Eclipse\EjemploRest2\EjemploRest\pom.xml.
 2024-10-16 09:54:21,830 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2024-10-16 09:54:21,831 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Admin\Desktop\Eclipse\EjemploRest2\EjemploRest\src\main\resources
+2024-10-16 09:54:21,833 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-16 09:54:21,834 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Admin\Desktop\Eclipse\EjemploRest2\EjemploRest\src\test\resources
