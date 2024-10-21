@@ -3162,3 +3162,4 @@ Caused by: java.lang.Exception: File not found: C:\Users\Admin\Desktop\Eclipse\E
 2024-10-16 09:54:21,834 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Admin\Desktop\Eclipse\EjemploRest2\EjemploRest\src\test\resources
 2024-10-17 08:46:56,692 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2024-10-17 12:40:04,704 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-10-18 09:00:00,176 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

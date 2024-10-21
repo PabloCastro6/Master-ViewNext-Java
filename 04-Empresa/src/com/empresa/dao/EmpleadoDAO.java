@@ -70,4 +70,62 @@ public class EmpleadoDAO {
 			e.printStackTrace(); // Manejo de excepciones
 		}
 	}
+	
+	public void buscarEmpleadosPorApellido1(String apellido1) {
+	    String sql = "SELECT * FROM empleados WHERE apellido1 = ?";
+	    
+	    try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+	        stmt.setString(1, apellido1);
+	        ResultSet rs = stmt.executeQuery();
+	        
+	        boolean encontrado = false; //Verificar si hay resultados
+	        while (rs.next()) {
+	            System.out.println("ID: " + rs.getInt("id") + ", Nombre: " + rs.getString("nombre") +
+	                               " " + rs.getString("apellido1") + " " + rs.getString("apellido2") +
+	                               ", Fecha de Nacimiento: " + rs.getDate("fecha_nacimiento") +
+	                               ", Salario: " + rs.getDouble("salario"));
+	        }
+	     // Si no se encontraron resultados
+	        if (!encontrado) {
+	            System.out.println("Apellido no encontrado.");
+	        }
+	        
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void eliminarEmpleadoPorId(int id) {
+	    String sql = "DELETE FROM empleados WHERE id = ?";
+	    
+	    try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+	        stmt.setInt(1, id);
+	        int filasAfectadas = stmt.executeUpdate();
+	        
+	        if (filasAfectadas > 0) {
+	            System.out.println("Empleado con ID " + id + " eliminado correctamente.");
+	        } else {
+	            System.out.println("El empleado con ID " + id + " no se ha encontrado.");
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+	
+	public void calcularSalarioMedio() {
+	    String sql = "SELECT AVG(salario) AS salario_medio FROM empleados";
+	    
+	    try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
+	        if (rs.next()) {
+	            double salarioMedio = rs.getDouble("salario_medio");
+	            System.out.println("El salario medio de los empleados es: " + salarioMedio);
+	        } else {
+	            System.out.println("No hay empleados registrados.");
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+
 }

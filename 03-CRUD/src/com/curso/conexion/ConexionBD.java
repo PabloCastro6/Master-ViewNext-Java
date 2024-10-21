@@ -10,12 +10,12 @@ public class ConexionBD {
 	private static final String PWD = "root";
 
 	public Connection conexion() {
-		Connection conex = null;		
+		Connection conex = null;
 		try {
 			conex = DriverManager.getConnection(URL, USER, PWD);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return conex;		
+		return conex;
 	}
 }

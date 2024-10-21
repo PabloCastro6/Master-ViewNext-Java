@@ -9,11 +9,11 @@ public class ProbarConexion {
 	public static void main(String[] args) {
 		Connection conex = null;
 		ConexionBD cbd = new ConexionBD();
-		conex =cbd.conexion();
-		if(conex!=null) {
+		conex = cbd.conexion();
+		if (conex != null) {
 			System.out.println("Conectado correctamente");
-		}else {
-			System.out.println("No se ha podido conectar");			
+		} else {
+			System.out.println("No se ha podido conectar");
 		}
 
 	}
