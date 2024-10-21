@@ -10,6 +10,10 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		EmpleadoDAO empleadoDAO = new EmpleadoDAO();
+		
+		 // Insertar el empleado por defecto sin hacer comprobaciones
+        Empleado empleadoPorDefecto = new Empleado("Pablo", "Castro", "Morato", java.sql.Date.valueOf("2000-12-26"), 3000.0);
+        empleadoDAO.insertarEmpleado(empleadoPorDefecto);
 
 		while (true) {
 			System.out.println("Selecciona una opción:");
@@ -19,7 +23,7 @@ public class Main {
 			System.out.println("4. Buscar los empleados por 1apellido");
 			System.out.println("5. Eliminar empleado");
 			System.out.println("6. Calcular salario medio");
-			System.out.println("4. Salir");
+			System.out.println("7. Salir");
 
 			int opcion = sc.nextInt();
 			sc.nextLine(); // Limpiar el buffer
@@ -51,33 +55,57 @@ public class Main {
 				break;
 
 			case 2:
-				// Llamada al método modificarEmpleado
-				System.out.println("Introduce el ID del empleado que deseas modificar:");
-				int id = sc.nextInt();
-				sc.nextLine(); // Limpiar el buffer
+			    // Solicita el ID del empleado a modificar
+			    System.out.println("Introduce el ID del empleado que deseas modificar:");
+			    int idModificar = sc.nextInt();
+			    sc.nextLine(); // Limpiar el buffer
 
-				System.out.println("Introduce el nuevo nombre del empleado:");
-				String nuevoNombre = sc.nextLine();
+			    // Submenú para elegir qué campo modificar
+			    System.out.println("¿Qué campo deseas modificar?");
+			    System.out.println("1. Nombre");
+			    System.out.println("2. Primer Apellido");
+			    System.out.println("3. Segundo Apellido");
+			    System.out.println("4. Fecha de Nacimiento");
+			    System.out.println("5. Salario");
 
-				System.out.println("Introduce el nuevo primer apellido:");
-				String nuevoApellido1 = sc.nextLine();
+			    int opcionModificar = sc.nextInt();
+			    sc.nextLine(); // Limpiar el buffer
 
-				System.out.println("Introduce el nuevo segundo apellido:");
-				String nuevoApellido2 = sc.nextLine();
-
-				System.out.println("Introduce la nueva fecha de nacimiento (YYYY-MM-DD):");
-				String nuevaFechaNacimientoStr = sc.nextLine();
-				Date nuevaFechaNacimiento = java.sql.Date.valueOf(nuevaFechaNacimientoStr);
-
-				System.out.println("Introduce el nuevo salario:");
-				double nuevoSalario = sc.nextDouble();
-				sc.nextLine(); // Limpiar el buffer
-
-				Empleado empleadoModificado = new Empleado(id, nuevoNombre, nuevoApellido1, nuevoApellido2,
-						(java.sql.Date) nuevaFechaNacimiento, nuevoSalario);
-				empleadoDAO.modificarEmpleado(empleadoModificado);
-				System.out.println("Empleado modificado correctamente.");
-				break;
+			    // Dependiendo de la opción seleccionada, se modifica un campo específico
+			    switch (opcionModificar) {
+			        case 1:
+			            System.out.println("Introduce el nuevo nombre:");
+			            String nuevoNombre = sc.nextLine();
+			            empleadoDAO.modificarCampoDelEmpleado(idModificar, "nombre", nuevoNombre);
+			            break;
+			        case 2:
+			            System.out.println("Introduce el nuevo primer apellido:");
+			            String nuevoApellido1 = sc.nextLine();
+			            empleadoDAO.modificarCampoDelEmpleado(idModificar, "apellido1", nuevoApellido1);
+			            break;
+			        case 3:
+			            System.out.println("Introduce el nuevo segundo apellido:");
+			            String nuevoApellido2 = sc.nextLine();
+			            empleadoDAO.modificarCampoDelEmpleado(idModificar, "apellido2", nuevoApellido2);
+			            break;
+			        case 4:
+			            System.out.println("Introduce la nueva fecha de nacimiento (YYYY-MM-DD):");
+			            String nuevaFechaNacimientoStr = sc.nextLine();
+			            
+			         // Convertir el String a java.sql.Date directamente
+			            java.sql.Date nuevaFechaNacimiento = java.sql.Date.valueOf(nuevaFechaNacimientoStr);
+			            
+			            empleadoDAO.modificarCampoDelEmpleado(idModificar, "fecha_nacimiento", nuevaFechaNacimiento);
+			            break;
+			        case 5:
+			            System.out.println("Introduce el nuevo salario:");
+			            double nuevoSalario = sc.nextDouble();
+			            empleadoDAO.modificarCampoDelEmpleado(idModificar, "salario", nuevoSalario);
+			            break;
+			        default:
+			            System.out.println("Opción no válida.");
+			    }
+			    break;
 
 			case 3:
 				// Llamada al método listar todos los empleados
