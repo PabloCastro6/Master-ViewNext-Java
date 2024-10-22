@@ -22,6 +22,9 @@ public class PedidoServlet extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getParameter("action");
 
+        
+        /*hacer si no con un case */
+        
         if ("crear".equals(action)) {
             crearPedido(request, response);
         } else if ("mostrarFormularioPedido".equals(action)) {

@@ -7,6 +7,7 @@ import com.almacen.dao.ProductoDAO;
 import com.almacen.modelo.Categoria;
 import com.almacen.modelo.Producto;
 
+
 public class ProductoServicio {
 	private ProductoDAO productoDAO = new ProductoDAO();
 	 

@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.curso.animales.Animal"/>
-    <fullyQualifiedTypeName name="com.curso.animales.Araña"/>
-    <fullyQualifiedTypeName name="com.curso.mascotas.Gato"/>
-    <fullyQualifiedTypeName name="com.curso.mascotas.Pez"/>
-    <fullyQualifiedTypeName name="com.curso.Calculadora"/>
     <fullyQualifiedTypeName name="com.prueba.vehiculo.interfaces.Conducible"/>
     <fullyQualifiedTypeName name="com.prueba.vehiculos.model.Coche"/>
     <fullyQualifiedTypeName name="com.prueba.vehichulo.Coche"/>
@@ -38,26 +33,31 @@
     <fullyQualifiedTypeName name="com.curso.modelo.PaginaWeb"/>
     <fullyQualifiedTypeName name="com.curso.model.Curso"/>
     <fullyQualifiedTypeName name="java.math.BigDecimal"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="com.almacen.modelo.Producto"/>
     <fullyQualifiedTypeName name="com.almacen.dao.PedidoDAO"/>
     <fullyQualifiedTypeName name="com.almacen.modelo.Pedido"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.almacen.modelo.Categoria"/>
     <fullyQualifiedTypeName name="com.almacen.dao.ProductoDAO"/>
     <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
     <fullyQualifiedTypeName name="com.curso.conexion.ConexionBD"/>
     <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.Statement"/>
-    <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.empresa.dao.EmpleadoDAO"/>
     <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="com.empresa.modelo.Empleado"/>
-    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.empresa.util.ConexionBD"/>
+    <fullyQualifiedTypeName name="javax.sql.DataSource"/>
+    <fullyQualifiedTypeName name="javax.naming.Context"/>
+    <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.curso.model.Persona"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="com.curso.service.MiService"/>
+    <fullyQualifiedTypeName name="com.almacen.modelo.Producto"/>
 </qualifiedTypeNameHistroy>
