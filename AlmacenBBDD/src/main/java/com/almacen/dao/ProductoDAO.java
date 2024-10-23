@@ -23,18 +23,33 @@ public class ProductoDAO {
 	}
 
 	public List<Producto> listarProductos() throws SQLException {
-        Connection conexion = null;
-        try {
-            // Usar la clase ConexionDB para obtener la conexión
-            conexion = ConexionDB.obtenerConexion();
-            // Aquí va el código para listar los productos usando la conexión
-        } finally {
-            if (conexion != null) {
-                conexion.close();  // Asegúrate de cerrar la conexión después de usarla
-            }
-        }
-		return null;
-    }
+	    List<Producto> productos = new ArrayList<>();
+	    String query = "SELECT * FROM productos";  // Consulta SQL para recuperar todos los productos
+
+	    try (Connection conexion = ConexionDB.obtenerConexion();
+	         Statement st = conexion.createStatement();
+	         ResultSet rs = st.executeQuery(query)) {
+
+	        while (rs.next()) {
+	            // Recuperar los valores del ResultSet y convertirlos a un objeto Producto
+	            Categoria categoria = Categoria.valueOf(rs.getString("categoria"));  // Convierte el valor de la base de datos a enum
+	            Producto producto = new Producto(
+	                rs.getInt("id"),               // ID del producto
+	                rs.getString("nombre"),        // Nombre del producto
+	                categoria,                     // Categoría (enum)
+	                rs.getBigDecimal("precio"),    // Precio del producto
+	                rs.getInt("stock")             // Stock del producto
+	            );
+	            productos.add(producto);  // Agrega el producto a la lista
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	        throw e;  // Vuelve a lanzar la excepción en caso de error
+	    }
+
+	    return productos;  // Devuelve la lista de productos
+	}
+
 
 
 
