@@ -5,14 +5,21 @@ import java.math.BigDecimal;
 public class Producto {
 	private int id;
 	private String nombre;
-	private String categoria;
+	private Categoria categoria; // Usar el enum Categoria en lugar de String
 	private BigDecimal precio;
 	private int stock;
 
-	public Producto() {
+	public Producto(String nombre, Categoria categoria, BigDecimal precio, int stock) {
+		super();
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.precio = precio;
+		this.stock = stock;
 	}
 
-	public Producto(String nombre, String categoria, BigDecimal precio, int stock) {
+	public Producto(int id, String nombre, Categoria categoria, BigDecimal precio, int stock) {
+		super();
+		this.id = id;
 		this.nombre = nombre;
 		this.categoria = categoria;
 		this.precio = precio;
@@ -20,6 +27,7 @@ public class Producto {
 	}
 
 	// Getters y setters
+
 	public int getId() {
 		return id;
 	}
@@ -36,11 +44,11 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public String getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 

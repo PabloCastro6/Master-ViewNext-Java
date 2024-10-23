@@ -9,12 +9,22 @@ public class ConexionDB {
 	private static final String USER = "root";
 	private static final String PASSWORD = "root";
 
-	public static Connection obtenerConexion() throws SQLException {
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			return DriverManager.getConnection(URL, USER, PASSWORD);
-		} catch (ClassNotFoundException e) {
-			throw new SQLException("Error al cargar el driver de MySQL", e);
-		}
-	}
+	// Método para obtener la conexión a la base de datos
+    public static Connection obtenerConexion() throws SQLException {
+        Connection conexion = null;
+        try {
+            // Cargar el driver de MySQL
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conexion = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Conexión a la base de datos establecida.");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("Error al cargar el driver de MySQL.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error en la conexión con la base de datos.");
+            throw e;  // Vuelve a lanzar la excepción si ocurre un error en la conexión
+        }
+        return conexion;
+    }
 }
