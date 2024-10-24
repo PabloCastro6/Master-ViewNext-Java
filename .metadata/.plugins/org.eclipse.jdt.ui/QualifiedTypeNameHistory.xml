@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.time.Duration"/>
-    <fullyQualifiedTypeName name="com.curso.colegio.Nota"/>
-    <fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
-    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
-    <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="org.junit.jupiter.api.Test"/>
     <fullyQualifiedTypeName name="com.curso.calculadora.Calculadora"/>
     <fullyQualifiedTypeName name="jakarta.servlet.http.Cookie"/>
@@ -35,19 +29,14 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="com.empresa.dao.EmpleadoDAO"/>
-    <fullyQualifiedTypeName name="java.sql.SQLException"/>
-    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="com.empresa.modelo.Empleado"/>
     <fullyQualifiedTypeName name="java.sql.Date"/>
     <fullyQualifiedTypeName name="com.empresa.util.ConexionBD"/>
     <fullyQualifiedTypeName name="javax.sql.DataSource"/>
     <fullyQualifiedTypeName name="javax.naming.Context"/>
     <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
-    <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.curso.model.Persona"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="com.curso.service.MiService"/>
@@ -59,5 +48,16 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Persistence"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManagerFactory"/>
     <fullyQualifiedTypeName name="jakarta.persistence.EntityManager"/>
+    <fullyQualifiedTypeName name="org.hibernate.mapping.List"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.NamedQueries"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.NamedQuery"/>
     <fullyQualifiedTypeName name="com.curso.model.Libro"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.TypedQuery"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="com.videoclub.consultas.ConsultaPeliculas"/>
+    <fullyQualifiedTypeName name="com.videoclub.model.Pelicula"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
