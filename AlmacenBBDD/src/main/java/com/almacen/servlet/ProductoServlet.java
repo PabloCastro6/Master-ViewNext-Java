@@ -5,13 +5,13 @@ import com.almacen.modelo.Producto;
 import com.almacen.servicio.ProductoServicio;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoServlet extends HttpServlet {
@@ -94,23 +94,22 @@ public class ProductoServlet extends HttpServlet {
 	private void listarProductos(HttpServletRequest request, HttpServletResponse response)
 	        throws ServletException, IOException {
 	    try {
-	        // Llama al servicio para obtener la lista de productos
 	        List<Producto> productos = productoServicio.listarProductos();
 	        
-	        // Mensaje de depuración para verificar que se están obteniendo productos
-	        System.out.println("Número de productos recuperados: " + productos.size());
-
-	        // Coloca la lista de productos en el request
-	        request.setAttribute("productos", productos);
+	        // Si productos es null, inicializamos con una lista vacía
+	        if (productos == null) {
+	            productos = new ArrayList<>();
+	        }
 	        
-	        // Despacha al JSP
+	        System.out.println("Número de productos en ProductoServlet: " + productos.size()); // Depuración
+
+	        request.setAttribute("productos", productos);
 	        request.getRequestDispatcher("listarProductos.jsp").forward(request, response);
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	        throw new ServletException("Error al listar productos", e);
 	    }
 	}
-
 
 
 	private void buscarProducto(HttpServletRequest request, HttpServletResponse response)

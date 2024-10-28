@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.almacen.modelo.Producto" %>
+<%@ page import= "java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,11 +23,12 @@
         </thead>
         <tbody>
             <%
-                // Obtener la lista de productos desde el request
                 List<Producto> productos = (List<Producto>) request.getAttribute("productos");
-                
-                // Verificar si la lista no es nula y tiene productos
-                if (productos != null && !productos.isEmpty()) {
+                if (productos == null) {
+                    productos = new ArrayList<>(); // Inicializar como lista vacía
+                }
+                System.out.println("Número de productos en JSP: " + productos.size()); // Depuración
+                if (!productos.isEmpty()) {
                     for (Producto producto : productos) {
             %>
             <tr>
