@@ -34,15 +34,14 @@ public class ProductoDAO {
 				// Recuperar los valores del ResultSet y convertirlos a un objeto Producto
 				Categoria categoria = Categoria.valueOf(rs.getString("categoria")); // Convierte el valor de la base de
 																					// datos a enum
-				Producto producto = new Producto(
-						rs.getInt("id"), // ID del producto
+				Producto producto = new Producto(rs.getInt("id"), // ID del producto
 						rs.getString("nombre"), // Nombre del producto
 						categoria, // Categoría (enum)
 						rs.getBigDecimal("precio"), // Precio del producto
 						rs.getInt("stock") // Stock del producto
 				);
 				productos.add(producto); // Agrega el producto a la lista
-				 System.out.println("Producto recuperado: " + producto.getNombre()); // Línea de prueba
+				System.out.println("Producto recuperado: " + producto.getNombre()); // Línea de prueba
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
