@@ -11,12 +11,11 @@ import jakarta.persistence.Table;
 @Table(name = "peliculas")
 @NamedQueries({
     @NamedQuery(name = "Pelicula.buscarTodas", query = "SELECT p FROM Pelicula p"),
-    @NamedQuery(name = "Pelicula.buscarPorDirector", query = "SELECT p FROM Pelicula p WHERE director = :director"),
-    @NamedQuery(name = "Pelicula.buscarPorDirectorEmpiezaCon", query = "SELECT p FROM Pelicula p WHERE director LIKE :patron"),
+    @NamedQuery(name = "Pelicula.buscarPorDirector", query = "SELECT p FROM Pelicula p WHERE p.director = :director"),
+    @NamedQuery(name = "Pelicula.buscarPorDirectorEmpiezaCon", query = "SELECT p FROM Pelicula p WHERE p.director LIKE :patron"),
     @NamedQuery(name = "Pelicula.buscarPorDirectoras", query = "SELECT p FROM Pelicula p WHERE p.director LIKE '%Ana%' OR p.director LIKE '%Eva%'"),
     @NamedQuery(name = "Pelicula.mostrarDirectores", query = "SELECT DISTINCT p.director FROM Pelicula p"),
-    @NamedQuery(name = "Pelicula.buscarPorPrecio", query = "SELECT p FROM Pelicula p WHERE precio_alquiler > :min AND precio_alquiler < :max"),
-    @NamedQuery(name = "Pelicula.contarPeliculasPorPrecio", query = "SELECT p.precio_alquiler, COUNT(p) FROM Pelicula p GROUP BY p.precio_alquiler")
+    @NamedQuery(name = "Pelicula.buscarPorPrecio", query = "SELECT p FROM Pelicula p WHERE p.precio_alquiler > :min AND p.precio_alquiler < :max")
 })
 public class Pelicula {
     @Id

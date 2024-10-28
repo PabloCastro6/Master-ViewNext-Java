@@ -10,7 +10,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 public class ConsultaPeliculas {
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("videoclub");
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("bdvideoclub");
     private EntityManager em;
     private TypedQuery<Pelicula> query;
 

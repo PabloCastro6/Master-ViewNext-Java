@@ -45,10 +45,6 @@ public class Principal {
             System.out.println(pelicula);
         }
 
-//        // Contar películas por precio
-//        System.out.println("========>>>>> PELÍCULAS POR PRECIO =============");
-//        for (String resultado : consulta.contarPeliculasPorPrecio()) {
-//            System.out.println(resultado);
-//        }
+        
     }
 }
