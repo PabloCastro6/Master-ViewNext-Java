@@ -1,3 +1,0 @@
-0-Crear Proyecto Maven (saltando arquetipos)
-1- Incorporar dependencias en POM.xml
-2- Crear carpeta META-INF en src/main/resources y ubicar dentro el persistence.xml (donde dentro el presistence.xml(donde se configurar user, pwd y unidad de persistencia)
