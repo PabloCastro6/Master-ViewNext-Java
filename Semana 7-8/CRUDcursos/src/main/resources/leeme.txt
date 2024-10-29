@@ -1,0 +1,50 @@
+RECURSO: Curso
+
+Desarrollar un servicio Web que exponga cursos. Un curso estará identificado por los siguientes campos:
+
+- codCurso: Código asignado al curso
+- nombre: Nombre del curso
+- duracion: Duración en número de horas del curso
+- precio: Precio del curso
+
+
+**Endpoints**
+
+POST    --> Alta de curso                        (http://localhost:8080/cursos)
+           - Recibirá en el cuerpo de la petición un JSON con los datos del curso y lo dará de alta.
+           - Devuelve como resultado una lista con los cursos existentes.
+
+DELETE  --> Eliminación de curso                 (http://localhost:8080/cursos/{codCurso})
+           - Recibe en la URL el código del curso y lo elimina.
+           - Devuelve una lista con los cursos existentes después de la eliminación.
+
+PUT     --> Actualización de duración            (http://localhost:8080/cursos/{codCurso}/{duracion})
+           - Recibe en la URL el código del curso y el número de horas para actualizar la duración.
+           - No devuelve ningún resultado.
+
+GET     --> Buscar curso                         (http://localhost:8080/cursos/{codCurso})
+           - A partir del código del curso en la URL, devuelve un JSON con los datos del curso.
+
+GET     --> Cursos por precio                    (http://localhost:8080/cursos/precio/{min}/{max})
+           - Recibe en la URL un precio mínimo y un precio máximo.
+           - Devuelve todos los cursos que se encuentren en dicho rango de precios.
+
+
+**PASOS para la implementación**
+
+1 - Crear Proyecto (insertar starter: Spring Web)
+
+2 - Crear el modelo de datos (paquete: com.curso.model)
+    - Clase `Curso` con atributos `codCurso`, `nombre`, `duracion`, `precio`
+    
+3 - Implementar la lógica de la capa de negocio (paquete: com.curso.service)
+    3.1 Crear una interfaz `CursoService` con métodos CRUD específicos
+    3.2 Crear una clase `CursoServiceImpl` que implementa la interfaz, anotada con `@Service`
+    
+4 - Implementar el controlador (paquete: com.curso.controller)
+    - Crear clase `CursoController` con anotación `@RestController`
+    - Inyectar `CursoService` con `@Autowired`
+    - Mapear los endpoints según lo detallado arriba
+    
+5 - Configuraciones en la clase lanzadera
+    - Asegurarse de que la clase principal tenga `@SpringBootApplication` y `@ComponentScan` si es necesario.

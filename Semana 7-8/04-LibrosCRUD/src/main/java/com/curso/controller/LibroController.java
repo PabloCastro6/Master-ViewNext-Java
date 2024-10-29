@@ -21,29 +21,24 @@ public class LibroController {
 	private LibroService libroService;
 	
 	@GetMapping(value="libros", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Libro> libros() {
-		return libroService.libros();
-		
+	public List<Libro> libros(){
+		return libroService.libros();		
 	}
-	
 	@GetMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Libro buscarLibro(@PathVariable int isbn) {
 		return libroService.buscarLibro(isbn);
 	}
-	
 	@PostMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void altaLibro(@RequestBody Libro libro) {
 		libroService.altaLibro(libro);
 	}
-	
-	@PutMapping (value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(value="libros", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public void actualizarLibro(@RequestBody Libro libro) {
 		libroService.actualizarLibro(libro);
 	}
-	
-	@DeleteMapping (value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Libro> eliminarLibro(@PathVariable int isbn) {
+	@DeleteMapping(value="libros/{isbn}", produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Libro> eliminarLibro(@PathVariable int isbn){
 		return libroService.eliminarLibro(isbn);
-		
 	}
+
 }
