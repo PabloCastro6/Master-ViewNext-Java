@@ -18,4 +18,7 @@ DELETE --> Eliminar un libro  			(http://localhost:8080/libro/{isbn})
 2 - Trabajar con el modelo de datos (com.curso.model)
 3 - Logica de la capa de negocio --> la capa de servicio  (com.curso.service)
 	3.1 Crear una interfaz
+	3.2 Crear clase que implementa la interfaz (@Service)
+4 - Implementar el controlador (com.curso.controller) (@RestController, @AutoWired, y hacer mapeo)
+5 - Configuraciones en clase lanzadera  
  
