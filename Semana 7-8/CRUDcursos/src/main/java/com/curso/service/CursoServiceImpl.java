@@ -2,17 +2,23 @@ package com.curso.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import org.springframework.stereotype.Service;
 
 import com.curso.model.Curso;
 
+/**
+ * Implementación de la interfaz CursoService para gestionar cursos.
+ */
 @Service
 public class CursoServiceImpl implements CursoService {
 
     private List<Curso> cursos;
 
+    /**
+     * Constructor que inicializa una lista de cursos de ejemplo.
+     */
     public CursoServiceImpl() {
         cursos = new ArrayList<>(List.of(
             new Curso(1, "Java Básico", 40, 200.0),

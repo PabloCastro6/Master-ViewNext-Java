@@ -1,0 +1,41 @@
+RECURSO: Libro 
+
+Vamos a exponer un CRUD de Libro
+
+
+GET    --> Recuperar todos los libros   (http://localhost:8080/libros)
+GET    --> Recuperar un libro           (http://localhost:8080/libro/{isbn})
+
+POST   --> Insertar un libro            (http://localhost:8080/libros)
+
+PUT    --> Actualizar un libro          (http://localhost:8080/libros)
+
+DELETE --> Eliminar un libro  			(http://localhost:8080/libro/{isbn})
+
+
+
+1 - Crear Proyecto , poner dependencias necesarias según tecnologias ( insertar starter: Spring Web, MySQL Driver, Spring Data JPA)
+2 - Defines el modelo de datos (com.curso.model) y usasr las anotaciones @Entity, @Table, @Id, etc. 
+
+3- Crear capa repository (com.curso.repository)
+	3.1 Crear una interfaz XXXRepository que extends JpàRepository<T,ID>
+		donde T es el tipo entidad
+			ID es el tipo de la clave primaria
+			
+			
+	3.2 Si se necesitan mas metodos que los que están en JpaRepository se incorporan aquí
+		@Quey ........
+		tipoDeVuelta metodo(tipoArg arg)
+		
+4 - Logica de la capa de negocio --> La capa de servicio (com.curso.service)
+	4.1 Crear la interfaz 
+	4.2 Crear clase que implementa la interfaz(@Service)
+	
+	
+	3.2 Crear clase que implementa la interfaz (@Service)
+4 - Implementar el controlador (com.curso.controller) (@RestController, @AutoWired, y hacer mapeo)
+5 - Configuraciones en clase lanzadera  
+
+
+
+ 

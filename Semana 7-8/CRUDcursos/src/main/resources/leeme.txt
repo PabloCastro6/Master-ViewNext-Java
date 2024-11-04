@@ -44,7 +44,7 @@ GET     --> Cursos por precio                    (http://localhost:8080/cursos/p
 4 - Implementar el controlador (paquete: com.curso.controller)
     - Crear clase `CursoController` con anotación `@RestController`
     - Inyectar `CursoService` con `@Autowired`
-    - Mapear los endpoints según lo detallado arriba
+    - Mapear los endpoints según lo detallado 
     
-5 - Configuraciones en la clase lanzadera
+5 - Configuraciones
     - Asegurarse de que la clase principal tenga `@SpringBootApplication` y `@ComponentScan` si es necesario.

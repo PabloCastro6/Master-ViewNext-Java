@@ -30,7 +30,7 @@ public class ProductoServlet extends HttpServlet {
 				break;
 			case "cargarProducto":
                 cargarProducto(request, response);
-                break;s
+                break;
 			case "modificar":
 				modificarProducto(request, response);
 				break;
