@@ -3,7 +3,9 @@ package com.masterjava.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,10 +19,11 @@ import com.masterjava.service.ICurso;
 
 @RestController
 /**
- * Clase controladora que inicializa los métodos de la interfaz ICurso y los mapea.
+ * Clase controladora que inicializa los métodos de la interfaz ICurso y los
+ * mapea.
  * 
- * @author Pablo Guijarro Pérez
- *@version 1.0 31/10/2024
+ * @author Pablo Castro Morato
+ * @version 1.0 31/10/2024
  */
 public class CursoController {
 	@Autowired
@@ -46,14 +49,23 @@ public class CursoController {
 		return iCurso.bajaCurso(codCurso);
 	}
 
-	@PutMapping(value = "cursos/{codCurso}/{duracion}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void actualizarDuracion(@PathVariable int codCurso, @PathVariable int duracion) {
-		iCurso.actualizarDuracion(codCurso, duracion);
+	@PutMapping(value = "cursos/{codCurso}/{duracion}")
+	public ResponseEntity<String> actualizarDuracion(@PathVariable int codCurso, @PathVariable int duracion) {
+	    try {
+	        iCurso.actualizarDuracion(codCurso, duracion);
+	        return ResponseEntity.ok("Duración actualizada correctamente");
+	    } catch (RuntimeException e) {
+	        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Error: " + e.getMessage());
+	    }
 	}
 
 	@GetMapping(value = "cursos/{precioMin}/{precioMax}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Curso> listarCursosPorRangoPrecio(@PathVariable int precioMin,@PathVariable int precioMax) {
-		return iCurso.listarCursosPorRangoPrecio(precioMin, precioMax);
+	public ResponseEntity<List<Curso>> listarCursosPorRangoPrecio(@PathVariable int precioMin, @PathVariable int precioMax) {
+	    if (precioMin > precioMax) {
+	        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+	    }
+	    return ResponseEntity.ok(iCurso.listarCursosPorRangoPrecio(precioMin, precioMax));
 	}
+
 
 }

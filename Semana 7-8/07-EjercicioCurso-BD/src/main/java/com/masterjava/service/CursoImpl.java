@@ -2,6 +2,7 @@ package com.masterjava.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import com.masterjava.repository.ICursoRepository;
 /**
  * Clase Impl que implementa los métodos de la interfaz ICurso.
  * 
- * @author Pablo Guijarro Pérez
+ * @author Pablo Castro Morato
  * @version 1.0 31/10/2024
  */
 public class CursoImpl implements ICurso {
@@ -38,7 +39,7 @@ public class CursoImpl implements ICurso {
 	 * @return lista de todos los cursos incluido el nuevo.
 	 */
 	public List<Curso> altaCurso(Curso curso) {
-		if (!repository.equals(curso)) {
+		if (!repository.existsById(curso.getCodCurso())) {
 			repository.save(curso);
 		}
 		return repository.findAll();
@@ -64,12 +65,14 @@ public class CursoImpl implements ICurso {
 	 * @param duracion la nueva duración del curso
 	 */
 	public void actualizarDuracion(int codCurso, int duracion) {
-		Curso curso = repository.findById(codCurso).orElse(null);
-		if (duracion > 0) {
-			curso.setDuracion(duracion);
+		 Curso curso = repository.findById(codCurso).orElse(null);
+		    if (curso != null && duracion > 0) { // Verifica que el curso exista y la duración sea válida
+		        curso.setDuracion(duracion);
+		        repository.save(curso);
+		    } else {
+		        throw new RuntimeException("Curso no encontrado o duración inválida");
+		    }
 		}
-		repository.save(curso);
-	}
 
 	@Override
 	/**
@@ -91,14 +94,8 @@ public class CursoImpl implements ICurso {
 	 * @return lista de cursos entre el rango de precios especificados.
 	 */
 	public List<Curso> listarCursosPorRangoPrecio(int precioMin, int precioMax) {
-		List<Curso> listaCursosPrecio = new ArrayList<Curso>();
-		for (int i = 0; i < repository.findAll().size(); i++) {
-			if (repository.findAll().get(i).getPrecio() >= precioMin
-					&& repository.findAll().get(i).getPrecio() <= precioMax) {
-				listaCursosPrecio.add(repository.findAll().get(i));
-			}
-		}
-		return listaCursosPrecio;
+		return repository.findAll().stream()
+	            .filter(curso -> curso.getPrecio() >= precioMin && curso.getPrecio() <= precioMax)
+	            .collect(Collectors.toList());
 	}
-
 }

@@ -2,7 +2,10 @@ package com.masterjava.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,14 +14,23 @@ import jakarta.persistence.Table;
 /**
  * Clase modelo que implementa las funciones básicas de un Curso.
  * 
- * @author Pablo Guijarro Pérez
+ * @author Pablo Castro Morato
  * @version 1.0 31/10/2024
  */
 public class Curso {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Esto asegura que `codCurso` se autogenere si es
+														// autoincremental
+	@Column(name = "cod_curso") // Asegura que se mapee exactamente con la columna en la BBDD
 	private int codCurso;
+
+	@Column(name = "nombre") // Mapea el atributo `nombre` con la columna `nombre` en la base de datos
 	private String nombre;
+
+	@Column(name = "duracion") // Mapea el atributo `duracion` con la columna `duracion` en la base de datos
 	private int duracion;
+
+	@Column(name = "precio") // Mapea el atributo `precio` con la columna `precio` en la base de datos
 	private double precio;
 
 	public Curso() {
