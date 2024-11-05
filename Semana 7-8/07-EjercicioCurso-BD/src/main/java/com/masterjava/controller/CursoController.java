@@ -51,7 +51,7 @@ public class CursoController {
 
 	@PutMapping(value = "cursos/{codCurso}/{duracion}")
 	public ResponseEntity<String> actualizarDuracion(@PathVariable int codCurso, @PathVariable int duracion) {
-	    try {
+		try {
 	        iCurso.actualizarDuracion(codCurso, duracion);
 	        return ResponseEntity.ok("Duración actualizada correctamente");
 	    } catch (RuntimeException e) {
