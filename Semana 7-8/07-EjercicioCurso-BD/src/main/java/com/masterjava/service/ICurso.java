@@ -7,7 +7,7 @@ import com.masterjava.model.Curso;
 /**
  * Interfaz que implementa métodos CRUD para la clase Curso.
  * 
- * @author Pablo Guijarro Pérez
+ * @author Pablo Castro Morato
  * @version 1.0 31/10/2024
  */
 public interface ICurso {
