@@ -1,0 +1,37 @@
+RECURSO: Libro
+
+Vamos a exponer un CRUD de Libro
+
+
+GET 	 -->  Recuperar todos los libros (http://localhost:8080/libros)
+GET  	 -->  Recuperar un libro		 (http://localhost:8080/libros/{isbn})
+
+GET    ---> Buscar por titulo           (http://localhost:8080/libros/consulta1/{titulo}) 
+GET    ---> Buscar por tematica           (http://localhost:8080/libros/consulta2/{tematica}) 
+POST	 -->  Insertar un libro			 (http://localhost:8080/libros)
+PUT		 -->  Actualizar un libro        (http://localhost:8080/libros)
+DELETE   -->  Eliminar un libro		     (http://localhost:8080/libros/{isbn})
+
+
+ 1- Crear Proyecto y poner dependencias necesarias según tecnologías
+ 2- Definie el modelo de datos    (com.curso.model) y usar las anotaciones @Entity, @Table, @Id, etc. 
+ 3- Crear capa repository ( com.curso.repository)
+  	3.1- Crear una interfaz XXXRepository que estends JpaRepositiry<T,ID>
+  			donde T es el tipo entidad
+  				  ID es el tipo de la clave primaria
+  	3.2- Si se necesitan más métods que los que estan en JpaREpositoris se incorporan aquí
+  	      @Query .......
+  	      tipoDevuelto metodo(tipoArg arg)			  
+  				  	
+ 4- Lógica de la capa de negocio-->la capa de servicio  (com.curso.service)
+ 	4.1- Crear una interfaz
+ 	4.2- Crear clase que implementa la interfaz (@Service) y declarar una variable de tipo XXRepository y 
+ 		anotarla con @Autowired
+ 	
+ 5-Implementar el controlador (com.curso.controller)    (@RestController, @AutoWired, y hacer mapeos)
+ 6-Hacer configuraciones
+ 	6-1 En el application.properties incorporar propiedades BD
+ 	6-2 Configuraciones en clase lanzadera
+ 	 @EntityScan(basePackages="com.curso.model")
+@EnableJpaRepositories(basePackages="com.curso.repository")
+@SpringBootApplication(scanBasePackages= {"com.curso.controller", "com.curso.service"})
