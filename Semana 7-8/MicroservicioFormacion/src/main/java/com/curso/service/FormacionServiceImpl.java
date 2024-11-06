@@ -40,23 +40,31 @@ public class FormacionServiceImpl implements FormacionService {
         return convertirCursosAFormaciones(cursosExistentes);
     }
 
+
+
     @Override
     public List<Formacion> obtenerListaFormaciones() {
-        // Llama al microservicio de cursos y obtiene la lista de cursos como CursoAux
-        List<CursoAux> cursos = Arrays.asList(restTemplate.getForObject(urlCursos, CursoAux[].class));
         
-        // Crea una nueva lista de Formacion para almacenar las conversiones
+        
         List<Formacion> formaciones = new ArrayList<>();
+        try {
+            List<CursoAux> cursos = Arrays.asList(restTemplate.getForObject(urlCursos, CursoAux[].class));
+            
 
-        // Convierte cada CursoAux en una Formacion con asignaturas calculadas
-        for (CursoAux curso : cursos) {
-            int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
-            formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
+            for (CursoAux curso : cursos) {
+                int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
+                formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
+            }
+        } catch (Exception e) {
+           
         }
 
         return formaciones;
     }
 
+
+    
+    
     private List<Formacion> convertirCursosAFormaciones(CursoAux[] cursos) {
         List<Formacion> formaciones = new ArrayList<>();
         for (CursoAux curso : cursos) {

@@ -14,7 +14,7 @@ import com.curso.formacion.model.Formacion;
 import com.curso.service.FormacionService;
 
 @RestController
-//@RequestMapping("/formacion")
+@RequestMapping("/formacion")
 public class FormacionController {
 
 	@Autowired
@@ -29,8 +29,10 @@ public class FormacionController {
 	}
 	
 	// Este método asegura que puedas acceder a la lista de cursos/formaciones
-    @GetMapping(value="formacion")
+	 @GetMapping("/cursos")
     public List<Formacion> obtenerCursos() {
+		 System.out.println("Endpoint /formacion/cursos ha sido invocado");
         return service.obtenerListaFormaciones();
     }
+	
 }
