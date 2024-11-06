@@ -1,17 +1,23 @@
 package com.curso.formacion.model;
 
+import java.math.BigDecimal;
+
 public class CursoAux {
 	private String nombre;
     private int duracion; // Duración en horas
+    private BigDecimal precio; // Precio del curso
     
 	public CursoAux() {
 		super();
 	}
-	public CursoAux(String nombre, int duracion) {
+	
+	public CursoAux(String nombre, int duracion, BigDecimal precio) {
 		super();
 		this.nombre = nombre;
 		this.duracion = duracion;
+		this.precio = precio;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -25,10 +31,20 @@ public class CursoAux {
 		this.duracion = duracion;
 	}
 	
+	public BigDecimal getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(BigDecimal precio) {
+		this.precio = precio;
+	}
+
 	@Override
 	public String toString() {
-		return "Curso [nombre=" + nombre + ", duracion=" + duracion + "]";
+		return "CursoAux [nombre=" + nombre + ", duracion=" + duracion + ", precio=" + precio + "]";
 	}
+
+	
     
     
 

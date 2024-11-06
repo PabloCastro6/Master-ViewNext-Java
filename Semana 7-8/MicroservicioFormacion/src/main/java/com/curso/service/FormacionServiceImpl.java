@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -17,9 +18,6 @@ public class FormacionServiceImpl implements FormacionService {
 
     private String urlCursos = "http://localhost:8080/cursos";
 
-    
-    
-    
     @Override
     public List<Formacion> nuevaFormacion(Formacion formacion) {
         CursoAux[] cursosExistentes = restTemplate.getForObject(urlCursos, CursoAux[].class);
@@ -42,22 +40,10 @@ public class FormacionServiceImpl implements FormacionService {
         return convertirCursosAFormaciones(cursosExistentes);
     }
 
-    
-    /*@Override
-	public List<Formacion> listarCursos() {
-		List<CursoAux> cursos = Arrays.asList(template.getForObject(URL, CursoAux[].class));
-		List<Formacion> formaciones = new ArrayList<Formacion>();
-		for (CursoAux curso : cursos) {
-			int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
-			formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
-		}
-		return formaciones;
-	}*/
-    
     @Override
     public List<Formacion> obtenerListaFormaciones() {
         // Llama al microservicio de cursos y obtiene la lista de cursos como CursoAux
-        List<CursoAux> cursos = Arrays.asList(template.getForObject(URL, CursoAux[].class));
+        List<CursoAux> cursos = Arrays.asList(restTemplate.getForObject(urlCursos, CursoAux[].class));
         
         // Crea una nueva lista de Formacion para almacenar las conversiones
         List<Formacion> formaciones = new ArrayList<>();
@@ -68,6 +54,15 @@ public class FormacionServiceImpl implements FormacionService {
             formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
         }
 
+        return formaciones;
+    }
+
+    private List<Formacion> convertirCursosAFormaciones(CursoAux[] cursos) {
+        List<Formacion> formaciones = new ArrayList<>();
+        for (CursoAux curso : cursos) {
+            int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
+            formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
+        }
         return formaciones;
     }
 }

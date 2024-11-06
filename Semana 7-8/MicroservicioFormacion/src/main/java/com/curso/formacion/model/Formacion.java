@@ -2,10 +2,6 @@ package com.curso.formacion.model;
 
 import java.math.BigDecimal;
 
-import jakarta.persistence.Entity;
-
-
-@Entity
 public class Formacion {
 	    private String curso;
 	    private int asignaturas;
