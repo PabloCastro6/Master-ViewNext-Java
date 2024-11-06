@@ -1,13 +1,13 @@
 package com.curso.formacion.model;
 
-public class Curso {
+public class CursoAux {
 	private String nombre;
     private int duracion; // Duración en horas
     
-	public Curso() {
+	public CursoAux() {
 		super();
 	}
-	public Curso(String nombre, int duracion) {
+	public CursoAux(String nombre, int duracion) {
 		super();
 		this.nombre = nombre;
 		this.duracion = duracion;

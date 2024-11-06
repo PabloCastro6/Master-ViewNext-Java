@@ -1,6 +1,6 @@
 package com.curso.service;
 
-import com.curso.formacion.model.Curso;
+import com.curso.formacion.model.CursoAux;
 import com.curso.formacion.model.Formacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,12 +17,15 @@ public class FormacionServiceImpl implements FormacionService {
 
     private String urlCursos = "http://localhost:8080/cursos";
 
+    
+    
+    
     @Override
     public List<Formacion> nuevaFormacion(Formacion formacion) {
-        Curso[] cursosExistentes = restTemplate.getForObject(urlCursos, Curso[].class);
+        CursoAux[] cursosExistentes = restTemplate.getForObject(urlCursos, CursoAux[].class);
 
         boolean existeCurso = false;
-        for (Curso curso : cursosExistentes) {
+        for (CursoAux curso : cursosExistentes) {
             if (curso.getNombre().equalsIgnoreCase(formacion.getCurso())) {
                 existeCurso = true;
                 break;
@@ -30,7 +33,7 @@ public class FormacionServiceImpl implements FormacionService {
         }
 
         if (!existeCurso) {
-            Curso nuevoCurso = new Curso();
+            CursoAux nuevoCurso = new CursoAux();
             nuevoCurso.setNombre(formacion.getCurso());
             nuevoCurso.setDuracion(formacion.getAsignaturas() * 10);
             restTemplate.postForLocation(urlCursos, nuevoCurso);
@@ -39,20 +42,32 @@ public class FormacionServiceImpl implements FormacionService {
         return convertirCursosAFormaciones(cursosExistentes);
     }
 
+    
+    /*@Override
+	public List<Formacion> listarCursos() {
+		List<CursoAux> cursos = Arrays.asList(template.getForObject(URL, CursoAux[].class));
+		List<Formacion> formaciones = new ArrayList<Formacion>();
+		for (CursoAux curso : cursos) {
+			int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
+			formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
+		}
+		return formaciones;
+	}*/
+    
     @Override
     public List<Formacion> obtenerListaFormaciones() {
-        Curso[] cursosExistentes = restTemplate.getForObject(urlCursos, Curso[].class);
-        return convertirCursosAFormaciones(cursosExistentes);
-    }
+        // Llama al microservicio de cursos y obtiene la lista de cursos como CursoAux
+        List<CursoAux> cursos = Arrays.asList(template.getForObject(URL, CursoAux[].class));
+        
+        // Crea una nueva lista de Formacion para almacenar las conversiones
+        List<Formacion> formaciones = new ArrayList<>();
 
-    private List<Formacion> convertirCursosAFormaciones(Curso[] cursos) {
-        List<Formacion> listaFormaciones = new ArrayList<>();
-        for (Curso curso : cursos) {
-            Formacion f = new Formacion();
-            f.setCurso(curso.getNombre());
-            f.setAsignaturas(curso.getDuracion() >= 50 ? 10 : 5);
-            listaFormaciones.add(f);
+        // Convierte cada CursoAux en una Formacion con asignaturas calculadas
+        for (CursoAux curso : cursos) {
+            int asignaturas = (curso.getDuracion() >= 50) ? 10 : 5;
+            formaciones.add(new Formacion(curso.getNombre(), asignaturas, curso.getPrecio()));
         }
-        return listaFormaciones;
+
+        return formaciones;
     }
 }
