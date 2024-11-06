@@ -10,6 +10,7 @@ public class Formacion {
 	    private String curso;
 	    private int asignaturas;
 	    private BigDecimal precio;
+	    
 		public Formacion() {
 			super();
 		}

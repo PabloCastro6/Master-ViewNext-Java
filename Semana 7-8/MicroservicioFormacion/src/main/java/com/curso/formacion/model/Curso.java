@@ -3,6 +3,7 @@ package com.curso.formacion.model;
 public class Curso {
 	private String nombre;
     private int duracion; // Duración en horas
+    
 	public Curso() {
 		super();
 	}

@@ -1,9 +1,11 @@
 package com.curso.controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,22 +15,20 @@ import com.curso.formacion.model.Formacion;
 import com.curso.service.FormacionService;
 
 @RestController
-@RequestMapping("/formaciones")
+@RequestMapping("/formacion")
 public class FormacionController {
-	
 
-	    @Autowired
-	    private FormacionService formacionService;
+    @Autowired
+    FormacionService service;
 
-	    @GetMapping("/cursos")
-	    public List<Formacion> obtenerCursos() {
-	        return formacionService.obtenerFormaciones();
-	    }
+    @PostMapping(value = "/alta/{curso}/{asignaturas}/{precio}")
+    public List<Formacion> altaFormacion(
+            @PathVariable String curso,
+            @PathVariable int asignaturas,
+            @PathVariable BigDecimal precio) {
 
-	    @PostMapping("/alta")
-	    public String altaCurso(@RequestBody Formacion formacion) {
-	        return formacionService.altaFormacion(formacion);
-	    }
-	}
-
+        Formacion formacion = new Formacion(curso, asignaturas, precio);
+        return service.nuevaFormacion(formacion);
+    }
+}
 
