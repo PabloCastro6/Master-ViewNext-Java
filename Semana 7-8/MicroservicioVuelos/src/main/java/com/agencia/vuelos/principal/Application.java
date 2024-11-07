@@ -1,4 +1,4 @@
-package com.agencia.reservas.principal;
+package com.agencia.vuelos.principal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
 
-@EntityScan(basePackages = "com.agencia.reservas.model")
-@EnableJpaRepositories(basePackages = "com.agencia.reservas.repository")
-@SpringBootApplication(scanBasePackages = {"com.agencia.reservas.controller", "com.agencia.reservas.service"})
+@EntityScan(basePackages = "com.agencia.vuelos.model")
+@EnableJpaRepositories(basePackages = "com.agencia.vuelos.repository")
+@SpringBootApplication(scanBasePackages = {"com.agencia.vuelos.controller", "com.agencia.vuelos.service"})
 public class Application {
 
     public static void main(String[] args) {
