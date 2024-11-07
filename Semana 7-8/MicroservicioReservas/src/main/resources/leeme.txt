@@ -1,0 +1,8 @@
+Dependencias: Spring Web, Spring Data JPA, H2 Database
+
+
+1- Crear Proyecto y poner dependencias necesarias según tecnologías
+2- Definir el modelo de datos
+3- Crear capa Repository
+4- Logica en la capa de negocio 
+5- Implementar el controlador (@RestController, @Autowired, hacer mapeos)

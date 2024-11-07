@@ -1,0 +1,4 @@
+ Proporciona endpoints REST para obtener vuelos y actualizar la disponibilidad de plazas.
+ 
+ GET /vuelos: Devuelve la lista de vuelos disponibles, filtrando por plazas.
+PUT /vuelos/{idVuelo}/plazas: Actualiza las plazas de un vuelo específico.

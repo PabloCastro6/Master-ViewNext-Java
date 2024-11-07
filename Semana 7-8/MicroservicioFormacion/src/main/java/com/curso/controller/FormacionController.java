@@ -27,12 +27,11 @@ public class FormacionController {
 		Formacion formacion = new Formacion(curso, asignaturas, precio);
 		return service.nuevaFormacion(formacion);
 	}
-	
+
 	// Este método asegura que puedas acceder a la lista de cursos/formaciones
-	 @GetMapping("/cursos")
-    public List<Formacion> obtenerCursos() {
-		 System.out.println("Endpoint /formacion/cursos ha sido invocado");
-        return service.obtenerListaFormaciones();
-    }
-	
+	@GetMapping("/cursos")
+	public List<Formacion> obtenerCursos() {
+		return service.obtenerListaFormaciones();
+	}
+
 }
