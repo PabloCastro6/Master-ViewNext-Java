@@ -1,25 +1,23 @@
 package com.agencia.hoteles.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+@Entity
 public class Hotel {
 
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idHotel;
-	private String nombre;
-	private String categoria;
-	private Double precio; 
-	private Boolean disponible;
-	
-	
+    private Integer idHotel;
+    private String nombre;
+    private String categoria;
+    private Double precio;
+    private Boolean disponible;
 	public Hotel() {
 		super();
 	}
-	
-	
 	public Hotel(Integer idHotel, String nombre, String categoria, Double precio, Boolean disponible) {
 		super();
 		this.idHotel = idHotel;
@@ -28,8 +26,6 @@ public class Hotel {
 		this.precio = precio;
 		this.disponible = disponible;
 	}
-
-
 	public Integer getIdHotel() {
 		return idHotel;
 	}
@@ -60,14 +56,7 @@ public class Hotel {
 	public void setDisponible(Boolean disponible) {
 		this.disponible = disponible;
 	}
-
-
-	@Override
-	public String toString() {
-		return "Hotel [idHotel=" + idHotel + ", nombre=" + nombre + ", categoria=" + categoria + ", precio=" + precio
-				+ ", disponible=" + disponible + "]";
-	}
-	
-	
-	
+    
+    
+    
 }

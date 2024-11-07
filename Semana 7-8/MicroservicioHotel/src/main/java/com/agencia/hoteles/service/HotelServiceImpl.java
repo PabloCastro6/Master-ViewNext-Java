@@ -11,17 +11,16 @@ import com.agencia.hoteles.repository.HotelRepository;
 @Service
 public class HotelServiceImpl implements HotelService {
 
-	 @Autowired
-	    private HotelRepository hotelRepository;
+    @Autowired
+    private HotelRepository hotelRepository;
 
-	    @Override
-	    public List<Hotel> obtenerHotelesDisponibles() {
-	        return hotelRepository.findByDisponibleTrue();
-	    }
+    @Override
+    public List<Hotel> obtenerHotelesDisponibles() {
+        return hotelRepository.findByDisponibleTrue();
+    }
 
-	    @Override
-	    public Hotel obtenerHotelPorNombre(String nombre) {
-	        return hotelRepository.findByNombre(nombre);
-	    }
-
+    @Override
+    public Hotel obtenerHotelPorNombre(String nombre) {
+        return hotelRepository.findByNombre(nombre);
+    }
 }
