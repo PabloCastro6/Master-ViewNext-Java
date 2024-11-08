@@ -1,20 +1,34 @@
 package com.agencia.hoteles.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "hoteles") // Especifica el nombre de la tabla en la base de datos
 public class Hotel {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idHotel") // Especifica el nombre exacto de la columna en la tabla
     private Integer idHotel;
+
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "categoria")
     private String categoria;
+
+    @Column(name = "precio")
     private Double precio;
+
+    @Column(name = "disponible")
     private Boolean disponible;
+
+    
 	public Hotel() {
 		super();
 	}
