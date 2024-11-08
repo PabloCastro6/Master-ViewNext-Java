@@ -31,4 +31,9 @@ public class VueloController {
 	public void actualizarPlazas(@PathVariable Integer idVuelo, @RequestParam Integer plazasReservadas) {
 		vueloService.actualizarPlazasVuelo(idVuelo, plazasReservadas);
 	}
+	
+	@GetMapping("/test")
+	public String testEndpoint() {
+	    return "El microservicio de vuelos está funcionando en el puerto 8081";
+	}
 }
