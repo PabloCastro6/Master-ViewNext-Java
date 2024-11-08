@@ -16,7 +16,7 @@ import com.agencia.hoteles.service.HotelService;
 public class HotelController {
 
     @Autowired
-     HotelService hotelService;
+    private HotelService hotelService;
 
     // Endpoint para obtener la lista de hoteles disponibles
     @GetMapping("/disponibles")
