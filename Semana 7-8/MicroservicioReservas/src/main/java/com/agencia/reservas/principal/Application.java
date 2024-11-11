@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.client.RestTemplate;
 
+
 @EntityScan(basePackages = "com.agencia.reservas.model")
 @EnableJpaRepositories(basePackages = "com.agencia.reservas.repository")
 @SpringBootApplication(scanBasePackages = {"com.agencia.reservas.controller", "com.agencia.reservas.service"})

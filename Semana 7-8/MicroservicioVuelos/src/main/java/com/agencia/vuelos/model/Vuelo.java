@@ -1,19 +1,31 @@
 package com.agencia.vuelos.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "vuelos")
 public class Vuelo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_vuelo") 
     private Integer idVuelo;
+
+    @Column(name = "compania")
     private String compañia;
+
+    @Column(name = "fecha_vuelo")
     private String fechaVuelo;
+
+    @Column(name = "precio")
     private Double precio;
+
+    @Column(name = "plazas_disponibles")
     private Integer plazasDisponibles;
     
     

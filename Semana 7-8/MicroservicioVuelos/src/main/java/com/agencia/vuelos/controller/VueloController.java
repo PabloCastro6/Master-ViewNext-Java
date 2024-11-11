@@ -3,6 +3,7 @@ package com.agencia.vuelos.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -26,14 +27,12 @@ public class VueloController {
 		return vueloService.obtenerVuelosDisponibles(plazas);
 	}
 
-	// Endpoint para actualizar las plazas de un vuelo
+	// Endpoint para actualizar plazas disponibles
 	@PutMapping("/{idVuelo}/plazas")
-	public void actualizarPlazas(@PathVariable Integer idVuelo, @RequestParam Integer plazasReservadas) {
+	public ResponseEntity<Void> actualizarPlazasVuelo(@PathVariable Integer idVuelo,
+			@RequestParam Integer plazasReservadas) {
 		vueloService.actualizarPlazasVuelo(idVuelo, plazasReservadas);
-	}
-	
-	@GetMapping("/test")
-	public String testEndpoint() {
-	    return "El microservicio de vuelos está funcionando en el puerto 8081";
+		return ResponseEntity.ok().build();
+
 	}
 }
