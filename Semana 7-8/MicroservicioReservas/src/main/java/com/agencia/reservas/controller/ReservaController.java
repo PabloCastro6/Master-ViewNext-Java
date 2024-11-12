@@ -17,6 +17,11 @@ import org.springframework.web.client.RestTemplate;
 import com.agencia.reservas.model.Reserva;
 import com.agencia.reservas.service.ReservaService;
 
+
+/**
+ * Controlador REST para gestionar reservas en el sistema.
+ * Proporciona endpoints para registrar y consultar reservas.
+ */
 @RestController
 @RequestMapping("/reservas")
 public class ReservaController {
@@ -27,21 +32,40 @@ public class ReservaController {
 	 //PRUEBA
 	 @Autowired
 	 private RestTemplate restTemplate;
+	 
+	 /**
+	     * Registra una nueva reserva en el sistema.
+	     *
+	     * @param reserva       Objeto de tipo Reserva con los datos de la reserva.
+	     * @param totalPersonas Número total de personas en la reserva.
+	     * @return La reserva registrada.
+	     */
 
-	    // Endpoint para registrar una reserva
+
 	    @PostMapping
 	    public Reserva registrarReserva(@RequestBody Reserva reserva, @RequestParam int totalPersonas) {
 	        return reservaService.registrarReserva(reserva, totalPersonas);
 	    }
 
-	    // Endpoint para obtener reservas por nombre de hotel
+	    /**
+	     * Obtiene las reservas asociadas a un hotel específico por su nombre.
+	     *
+	     * @param nombreHotel Nombre del hotel para el cual se buscan reservas.
+	     * @return Lista de reservas asociadas al hotel.
+	     */
 	    @GetMapping("/hotel/{nombreHotel}")
 	    public List<Reserva> obtenerReservasPorHotel(@PathVariable String nombreHotel) {
 	        return reservaService.obtenerReservasPorHotel(nombreHotel);
 	    }
 	    
 	    
-	    //PRUEBA 
+	    /**
+	     * Prueba de conexión con el servicio de vuelos.
+	     * Realiza una petición GET al servicio de vuelos para un vuelo específico.
+	     *
+	     * @param idVuelo ID del vuelo a consultar.
+	     * @return Mensaje de éxito si la conexión es exitosa.
+	     */
 	    @GetMapping("/test-conexion-vuelos/{idVuelo}")
 	    public ResponseEntity<String> testConexionVuelos(@PathVariable Integer idVuelo) {
 	        String url = "http://localhost:8081/vuelos/" + idVuelo;

@@ -4,9 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
+/**
+ * Entidad que representa una reserva en el sistema.
+ */
 @Entity
+@Table(name = "reservas")
 public class Reserva {
 	
 	@Id
@@ -17,10 +22,23 @@ public class Reserva {
 	private Integer idHotel;
 	private Integer idVuelo;
 	
+	
+	  /**
+     * Constructor vacío.
+     */
 	public Reserva() {
 		super();
 	}
 
+	/**
+     * Constructor con parámetros.
+     *
+     * @param idReserva      ID de la reserva.
+     * @param nombreCliente  Nombre del cliente.
+     * @param dni            DNI del cliente.
+     * @param idHotel        ID del hotel asociado a la reserva.
+     * @param idVuelo        ID del vuelo asociado a la reserva.
+     */
 	public Reserva(Integer idReserva, String nombreCliente, String dni, Integer idHotel, Integer idVuelo) {
 		super();
 		this.idReserva = idReserva;

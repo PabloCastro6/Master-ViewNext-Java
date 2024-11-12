@@ -7,6 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
+/**
+ * Entidad que representa un vuelo en la base de datos.
+ */
 @Entity
 @Table(name = "vuelos")
 public class Vuelo {

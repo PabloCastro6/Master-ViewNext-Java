@@ -39,17 +39,24 @@ CREATE TABLE reservas (
     idHotel INT,
     id_Vuelo INT,
     FOREIGN KEY (idHotel) REFERENCES hoteles(idHotel),
-    FOREIGN KEY (id_Vuelo) REFERENCES vuelos(id_Vuelo)
+    FOREIGN KEY (id_Vuelo) REFERENCES vuelos(id_vuelo)
 );
+
 
 INSERT INTO reservas (nombreCliente, dni, idHotel, id_Vuelo) VALUES
 ('Cliente A', '12345678A', 1, 1),
 ('Cliente B', '87654321B', 2, 2);
 
 
+SHOW CREATE TABLE reservas;
+
+
 Select * from hoteles;
 Select * from vuelos;
 Select * from reservas;
+
+DROP TABLE IF EXISTS reservas;
+
 
 SELECT * FROM vuelos WHERE plazasDisponibles >= 5;
 DESCRIBE vuelos; 
@@ -59,4 +66,6 @@ ALTER TABLE vuelos CHANGE COLUMN idVuelo id_vuelo INT AUTO_INCREMENT;
 ALTER TABLE vuelos CHANGE fechaVuelo fecha_vuelo DATE;
 ALTER TABLE vuelos CHANGE plazasDisponibles plazas_disponibles INT;
 
+ALTER TABLE reservas CHANGE idHotel id_hotel INT;
+ALTER TABLE reservas CHANGE nombreCliente nombre_cliente VARCHAR(100);
 

@@ -7,6 +7,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
+/**
+ * Entidad que representa un hotel en la base de datos.
+ */
+
 @Entity
 @Table(name = "hoteles") // Especifica el nombre de la tabla en la base de datos
 public class Hotel {
@@ -29,9 +34,23 @@ public class Hotel {
     private Boolean disponible;
 
     
+    /**
+     * Constructor vacío necesario para JPA.
+     */
+    
 	public Hotel() {
 		super();
 	}
+	
+	  /**
+     * Constructor con parámetros para inicializar un hotel.
+     *
+     * @param idHotel ID del hotel.
+     * @param nombre Nombre del hotel.
+     * @param categoria Categoría del hotel.
+     * @param precio Precio del hotel.
+     * @param disponible Disponibilidad del hotel.
+     */
 	public Hotel(Integer idHotel, String nombre, String categoria, Double precio, Boolean disponible) {
 		super();
 		this.idHotel = idHotel;
